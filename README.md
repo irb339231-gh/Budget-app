@@ -199,3 +199,7 @@
 
 ### 11. 画面遷移図
 Figma：<https://www.figma.com/design/Tvcx2Hl0XveW8mdiGqiFrA/%E7%84%A1%E9%A1%8C?node-id=11-1577&t=UcW3zQ6TwsU4Kdv7-0>
+
+### 12. ER図
+dbdiagram.io：https://gyazo.com/fb801b1ea6e0ce0919aac4b08521eccf
+
