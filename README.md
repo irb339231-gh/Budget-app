@@ -201,5 +201,5 @@
 Figma：<https://www.figma.com/design/Tvcx2Hl0XveW8mdiGqiFrA/%E7%84%A1%E9%A1%8C?node-id=11-1577&t=UcW3zQ6TwsU4Kdv7-0>
 
 ### 12. ER図
-dbdiagram.io：https://gyazo.com/6507730623caee0d25d31d78e4a7793f
+dbdiagram.io：https://gyazo.com/05e83f681b889d38a7ed705136142cad
 
