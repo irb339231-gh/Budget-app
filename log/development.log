@@ -73,3 +73,1043 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-07-04 21:58:49.732981', '2026-07-04 21:58:49.732983') RETURNING "key"[0m
+Migrating to DeviseCreateUsers (20260704215615)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260704215615') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO "$user", public[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+  [1m[35mSQL (1.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "name" character varying DEFAULT '' NOT NULL, "remember_created_at" timestamp(6), "reset_password_sent_at" timestamp(6), "reset_password_token" character varying, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260704215615)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-07-04 22:10:08.004041', '2026-07-04 22:10:08.004042') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2026-07-04 22:10:08.007659' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'b40964701a3faf2833426625192b210ef290ecf7', '2026-07-04 22:10:08.013373', '2026-07-04 22:10:08.013374') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:10:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 325.0ms | GC: 41.3ms)
+Completed 200 OK in 372ms (Views: 339.9ms | ActiveRecord: 3.1ms (0 queries, 0 cached) | GC: 41.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:10:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:10:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:10:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 192.168.65.1 at 2026-07-05 07:11:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 19ms (Views: 12.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:11:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 12.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:11:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:11:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | GC: 0.1ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:13:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 8.3ms | GC: 7.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.5ms | GC: 7.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | GC: 7.6ms)
+Completed 200 OK in 38ms (Views: 21.5ms | ActiveRecord: 1.0ms (0 queries, 0 cached) | GC: 7.6ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:13:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:13:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 17.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:13:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:13:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "remember_me" => "0"}, "commit" => "Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "remember_me" => "0"}, "commit" => "Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 192.168.65.1 at 2026-07-05 07:15:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"name" => "aaa", "email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "aaa"], ["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2026-07-04 22:15:21.714564"], ["updated_at", "2026-07-04 22:15:21.714564"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 216ms (ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:15:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:15:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:15:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:15:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:15:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:15:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:15:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:16:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:20:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | GC: 0.1ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:20:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:20:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:20:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:20:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | GC: 0.7ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:20:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:20:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:22:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:22:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:22:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 21ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:22:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:22:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.6ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0))
+Caused by: ArgumentError (wrong number of arguments (given 1, expected 0))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2>Sign up</h2>
+    2: 
+    3: <%= form_with(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4:   <%= render "devise/shared/error_messages", resource: resource %>
+    5: 
+    6:   <div class="field">
+    7:     <p><%= f.label :name %></p>
+  
+app/views/devise/registrations/new.html.erb:4
+
+Information for cause: ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/views/devise/registrations/new.html.erb:4
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:22:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0))
+Caused by: ArgumentError (wrong number of arguments (given 1, expected 0))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2>Sign up</h2>
+    2: 
+    3: <%= form_with(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    4:   <%= render "devise/shared/error_messages", resource: resource %>
+    5: 
+    6:   <div class="field">
+    7:     <p><%= f.label :name %></p>
+  
+app/views/devise/registrations/new.html.erb:4
+
+Information for cause: ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/views/devise/registrations/new.html.erb:4
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:22:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0))
+Caused by: ArgumentError (wrong number of arguments (given 1, expected 0))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= form_with(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <p><%= f.label :email %></p>
+    6:     <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+    7:   </div>
+  
+app/views/devise/sessions/new.html.erb:4
+
+Information for cause: ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/views/devise/sessions/new.html.erb:4
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:23:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 16.9ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:23:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:23:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:23:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 5.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:24:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:24:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:24:48 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:24:48 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:24:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:24:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:24:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:24:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:24:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:24:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:24:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | GC: 0.2ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.2ms)
+Completed 200 OK in 37ms (Views: 17.1ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:24:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:25:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:25:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 2.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:25:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:25:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:25:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:25:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:25:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:25:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:25:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:25:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:29:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 2.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 2.2ms)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:29:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.5ms | GC: 1.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:29:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | GC: 0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | GC: 1.3ms)
+Completed 200 OK in 39ms (Views: 16.4ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 9.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:29:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:29:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:29:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:30:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "remember_me" => "0"}, "commit" => "Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 220ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:30:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:30:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 19ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:30:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:30:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:33:48 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:33:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:33:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:33:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:33:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:33:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:33:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.6ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:33:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:34:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.6ms)
+Completed 200 OK in 17ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:34:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "remember_me" => "0"}, "commit" => "Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 211ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:34:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:34:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2026-07-05 07:34:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 192.168.65.1 at 2026-07-05 07:34:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 16ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 192.168.65.1 at 2026-07-05 07:34:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#top as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/top.html.erb within layouts/application
+  Rendered pages/top.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.7ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_up" for 192.168.65.1 at 2026-07-05 07:34:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2026-07-05 07:34:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
