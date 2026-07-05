@@ -1,2 +1,20 @@
-<h1>Budget App</h1>
-<p>Welcome to the Budget App!</p>
+<div class="min-h-screen flex items-center justify-center bg-base-200">
+  <div class="text-center px-4">
+    <div class="badge badge-outline badge-lg mb-4">転職活動中の方へ</div>
+    <h1 class="text-4xl md:text-5xl xl:text-6xl font-semibold mb-6">
+      転職活動中の<span class="text-primary">お金の不安</span>を
+      <br />
+      今すぐ解消する
+    </h1>
+    <p class="text-lg text-gray-500 mb-8">
+      貯蓄・退職金から今使える金額を自動算出。<br />
+      「これを買っても大丈夫？」がすぐわかる。
+    </p>
+    <div class="flex gap-4 justify-center">
+      <%= link_to "無料で始める", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline btn-lg" %>
+    </div>
+  </div>
+</div>
+
+
