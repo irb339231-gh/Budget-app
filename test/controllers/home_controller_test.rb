@@ -5,7 +5,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in @user
   end
-  
+
   test "should get index" do
     get home_index_url
     assert_response :success
