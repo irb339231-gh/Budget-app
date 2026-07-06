@@ -23,6 +23,19 @@ before_action :authenticate_user!
     @future_expenses = current_user.expenditures.where(category: :future_expense)
   end
 
+  def edit
+    @future_expense = current_user.expenditures.find(params[:id])
+  end
+
+  def update
+    @future_expense = current_user.expenditures.find(params[:id])
+    if @future_expense.update(future_expense_params)
+      redirect_to edit_all_future_expenses_path, notice: "将来の支出を更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def future_expense_params
