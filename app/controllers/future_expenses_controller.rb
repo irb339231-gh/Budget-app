@@ -1,2 +1,31 @@
 class FutureExpensesController < ApplicationController
+before_action :authenticate_user!
+
+  def index
+    @future_expenses = current_user.expenditures.where(category: :future_expense)
+  end
+
+  def new
+    @future_expense = current_user.expenditures.build
+  end
+
+  def create
+    @future_expense = current_user.expenditures.build(future_expense_params)
+    @future_expense.category = :future_expense
+    if @future_expense.save
+      redirect_to future_expenses_path, notice: "将来の支出を登録しました"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit_all
+    @future_expenses = current_user.expenditures.where(category: :future_expense)
+  end
+
+  private
+
+  def future_expense_params
+    params.require(:future_expense).permit(:name, :amount)
+  end
 end

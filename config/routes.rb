@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "home", to: "home#index", as: :home
   get "incomes/edit_all", to: "incomes#edit_all", as: :edit_all_incomes
-
   resources :incomes
+
+  get "future_expenses/edit_all", to: "future_expenses#edit_all", as: :edit_all_future_expenses
+  resources :future_expenses
 
   get "up" => "rails/health#show", as: :rails_health_check
 
