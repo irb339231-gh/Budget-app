@@ -36,6 +36,12 @@ before_action :authenticate_user!
     end
   end
 
+  def destroy
+    @future_expense = current_user.expenditures.find(params[:id])
+    @future_expense.destroy
+    redirect_to edit_all_future_expenses_path, notice: "将来の支出を削除しました"
+  end
+
   private
 
   def future_expense_params
