@@ -2,7 +2,7 @@
   <div class="card bg-base-100 shadow-xl">
     <div class="card-body">
       <div class="card bg-primary text-primary-content shadow-xl mb-6">
-        <div class="card-body text-center">  
+        <div class="card-body text-center">
           <h2 class="text-2xl font-bold">収入一覧</h2>
         </div>
       </div>
@@ -16,10 +16,10 @@
             </tr>
           </thead>
           <tbody>
-            <% @expenditures.each do |expenditure| %>
+            <% @incomes.each do |income| %>
               <tr>
-                <td><%= expenditure.name %></td>
-                <td class="text-right">¥<%= number_with_delimiter(expenditure.amount) %></td>
+                <td><%= income.name %></td>
+                <td class="text-right">¥<%= number_with_delimiter(income.amount) %></td>
               </tr>
             <% end %>
           </tbody>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4 mt-4">
-        <%= link_to "編集する", edit_all_expenditures_path, class: "btn btn-outline" %>
+        <%= link_to "編集する", edit_all_incomes_path, class: "btn btn-outline" %>
         <%= link_to "ホームへ", home_path, class: "btn btn-outline" %>
       </div>
     </div>

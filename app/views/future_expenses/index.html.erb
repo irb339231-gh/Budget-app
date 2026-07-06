@@ -1,0 +1,35 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+      <div class="card bg-primary text-primary-content shadow-xl mb-6">
+        <div class="card-body text-center">
+          <h2 class="text-2xl font-bold">将来の支出一覧</h2>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="table table-zebra">
+          <thead>
+            <tr>
+              <th>支出名</th>
+              <th class="text-right">金額</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @future_expenses.each do |future_expense| %>
+              <tr>
+                <td><%= future_expense.name %></td>
+                <td class="text-right">¥<%= number_with_delimiter(future_expense.amount) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <%= link_to "編集する", edit_all_future_expenses_path, class: "btn btn-outline" %>
+        <%= link_to "ホームへ", home_path, class: "btn btn-outline" %>
+      </div>
+    </div>
+  </div>
+</div>

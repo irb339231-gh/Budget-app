@@ -1,0 +1,29 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="card bg-base-100 shadow-xl max-w-lg mx-auto">
+    <div class="card-body">
+      <h2 class="card-title">将来の支出追加</h2>
+
+      <%= form_with model: @future_expense, url: future_expenses_path, scope: :future_expense do |f| %>
+        <%= render "devise/shared/error_messages", resource: @future_expense %>
+
+        <div class="form-control mb-4">
+          <%= f.label :name, "支出名", class: "label" %>
+          <%= f.text_field :name, class: "input input-bordered w-full",
+              placeholder: "例：引っ越し費用、ローン" %>
+        </div>
+
+        <div class="form-control mb-6">
+          <%= f.label :amount, "金額", class: "label" %>
+          <%= f.number_field :amount, class: "input input-bordered w-full",
+              placeholder: "例：1000000" %>
+        </div>
+
+        <div class="form-control">
+          <%= f.submit "追加する", class: "btn btn-primary w-full" %>
+        </div>
+      <% end %>
+
+      <%= link_to "戻る", future_expenses_path, class: "btn btn-outline w-full mt-4" %>
+    </div>
+  </div>
+</div>
