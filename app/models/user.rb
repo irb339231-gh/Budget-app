@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :expenditures, dependent: :destroy
-  
+
   validates :name, presence: true, length: { maximum: 20 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
