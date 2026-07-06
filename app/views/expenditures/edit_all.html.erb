@@ -1,0 +1,38 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">収入編集</h2>
+
+      <div class="overflow-x-auto">
+        <table class="table table-zebra">
+          <thead>
+            <tr>
+              <th>収入名</th>
+              <th class="text-right">金額</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @expenditures.each do |expenditure| %>
+              <tr>
+                <td><%= expenditure.name %></td>
+                <td class="text-right">¥<%= number_with_delimiter(expenditure.amount) %></td>
+                <td class="text-right flex gap-2">
+                  <%= link_to "編集", edit_expenditure_path(expenditure), class: "btn btn-outline btn-xs" %>
+                  <%= button_to "削除", expenditure_path(expenditure), method: :delete,
+                      class: "btn btn-error btn-xs",
+                      data: { turbo_confirm: "削除してもよいですか？" } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <%= link_to "追加する", new_expenditure_path, class: "btn btn-primary" %>
+        <%= link_to "戻る", expenditures_path, class: "btn btn-outline" %>
+      </div>
+    </div>
+  </div>
+</div>
