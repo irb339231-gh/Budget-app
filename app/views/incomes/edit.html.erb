@@ -3,8 +3,8 @@
     <div class="card-body">
       <h2 class="card-title">収入の編集</h2>
 
-      <%= form_with model: @expenditure do |f| %>
-        <%= render "devise/shared/error_messages", resource: @expenditure %>
+      <%= form_with model: @income, url: income_path(@income), method: :patch do |f| %>
+        <%= render "devise/shared/error_messages", resource: @income %>
 
         <div class="form-control mb-4">
           <%= f.label :name, "収入名", class: "label" %>
@@ -23,7 +23,7 @@
         </div>
       <% end %>
 
-      <%= link_to "戻る", edit_all_expenditures_path, class: "btn btn-outline w-full mt-4" %>
+      <%= link_to "戻る", edit_all_incomes_path, class: "btn btn-outline w-full mt-4" %>
     </div>
   </div>
 </div>

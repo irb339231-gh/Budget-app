@@ -13,13 +13,13 @@
             </tr>
           </thead>
           <tbody>
-            <% @expenditures.each do |expenditure| %>
+            <% @incomes.each do |income| %>
               <tr>
-                <td><%= expenditure.name %></td>
-                <td class="text-right">¥<%= number_with_delimiter(expenditure.amount) %></td>
+                <td><%= income.name %></td>
+                <td class="text-right">¥<%= number_with_delimiter(income.amount) %></td>
                 <td class="text-right flex gap-2">
-                  <%= link_to "編集", edit_expenditure_path(expenditure), class: "btn btn-outline btn-xs" %>
-                  <%= button_to "削除", expenditure_path(expenditure), method: :delete,
+                  <%= link_to "編集", edit_income_path(income), class: "btn btn-outline btn-xs" %>
+                  <%= button_to "削除", income_path(income), method: :delete,
                       class: "btn btn-error btn-xs",
                       data: { turbo_confirm: "削除してもよいですか？" } %>
                 </td>
@@ -30,8 +30,8 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4 mt-4">
-        <%= link_to "追加する", new_expenditure_path, class: "btn btn-primary" %>
-        <%= link_to "戻る", expenditures_path, class: "btn btn-outline" %>
+        <%= link_to "追加する", new_income_path, class: "btn btn-primary" %>
+        <%= link_to "戻る", incomes_path, class: "btn btn-outline" %>
       </div>
     </div>
   </div>

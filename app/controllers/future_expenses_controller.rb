@@ -1,0 +1,2 @@
+class FutureExpensesController < ApplicationController
+end

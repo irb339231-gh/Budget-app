@@ -1,0 +1,2 @@
+module FutureExpensesHelper
+end
