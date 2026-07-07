@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "future_expenses/edit_all", to: "future_expenses#edit_all", as: :edit_all_future_expenses
   resources :future_expenses
 
+  get "fixed_costs/edit_all", to: "fixed_costs#edit_all", as: :edit_all_fixed_costs
+  resources :fixed_costs
+
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
