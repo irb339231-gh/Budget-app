@@ -3,7 +3,7 @@
     <div class="card-body">
       <h2 class="card-title">固定費追加</h2>
 
-      <%= form_with model: @fixed_cost, url: fixed_costs_path, scope: :expenditure do |f| %>
+      <%= form_with model: @fixed_cost, url: fixed_costs_path, scope: :fixed_cost do |f| %>
         <%= render "devise/shared/error_messages", resource: @fixed_cost %>
 
         <div class="form-control mb-4">
@@ -23,7 +23,7 @@
         </div>
       <% end %>
 
-      <%= link_to "戻る", future_expenses_path, class: "btn btn-outline w-full mt-4" %>
+      <%= link_to "戻る", edit_all_fixed_costs_path, class: "btn btn-outline w-full mt-4" %>
     </div>
   </div>
 </div>
