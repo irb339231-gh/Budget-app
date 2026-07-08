@@ -33,6 +33,13 @@ class FixedCostsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @fixed_cost = current_user.expenditures.find(params[:id])
+    @fixed_cost.destroy
+    redirect_to edit_all_fixed_costs_path, notice: "固定費を削除しました"
+  end
+
   private
 
   def fixed_cost_params
