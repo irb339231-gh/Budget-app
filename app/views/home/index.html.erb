@@ -8,27 +8,36 @@
     </div>
   </div>
   
-  <%# 転職活動期間 %>
-  <div class="card bg-neutral shadow-md mb-6">
-    <div class="card-body">
-      <h2 class="card-title">転職活動期間</h2>
+<%# 転職活動期間 %>
+<div class="card bg-neutral shadow-md mb-6">
+  <div class="card-body">
+    <h2 class="card-title">転職活動期間</h2>
+    <%= form_with model: current_user, url: update_job_search_path, method: :patch do |f| %>
       <div class="flex gap-4 items-center">
         <div class="form-control">
           <label class="label">
             <span class="label-text">開始日</span>
           </label>
-          <input type="date" class="input input-bordered" disabled value = "未設定">
+          <%= f.date_field :job_search_start_month,
+              class: "input input-bordered",
+              value: current_user.job_search_start_month %>
         </div>
         <span class="mt-6">〜</span>
         <div class="form-control">
           <label class="label">
             <span class="label-text">終了日</span>
           </label>
-            <input type="date" class="input input-bordered" >
+          <%= f.date_field :job_search_end_month,
+              class: "input input-bordered",
+              value: current_user.job_search_end_month %>
         </div>
       </div>
-    </div>
-  </div>  
+      <div class="mt-4">
+        <%= f.submit "設定する", class: "btn btn-primary btn-sm" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
   <%# 内訳表示 %>
   <div class="card bg-neutral shadow-md mb-6">
