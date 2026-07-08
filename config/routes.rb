@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  patch "home/update_job_search", to: "users#update_job_search", as: :update_job_search
   # Defines the root path route ("/")
   # root "posts#index"
 end
