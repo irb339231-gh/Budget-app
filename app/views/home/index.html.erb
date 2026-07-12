@@ -4,7 +4,7 @@
   <div class="card bg-primary text-primary-content shadow-xl mb-6">
     <div class="card-body text-center">
       <p class="text-lg">あなたの今使える金額は</p>
-      <p class="text-5xl font-bold">¥0</p>
+      <p class="text-5xl font-bold">¥<%= number_with_delimiter(@available_amount) %></p>
     </div>
   </div>
   
@@ -48,15 +48,15 @@
           <tbody>
             <tr>
               <td>収入</td>
-              <td class="text-right">¥0</td>
+              <td class="text-right">¥<%= number_with_delimiter(current_user.total_income) %></td>
             </tr>
             <tr>
               <td>将来の支出</td>
-              <td class="text-right">¥0</td>
+              <td class="text-right">¥<%= number_with_delimiter(current_user.total_future_expenses) %></td>
             </tr>
             <tr>
               <td>固定費</td>
-              <td class="text-right">¥0</td>
+              <td class="text-right">¥<%= number_with_delimiter(current_user.total_fixed_costs) %></td>
             </tr>
             <tr>
               <td>随時支出</td>
