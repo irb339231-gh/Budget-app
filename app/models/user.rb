@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   def available_amount
     total_income - total_future_expenses - total_fixed_costs
   end
@@ -16,7 +16,7 @@ class User < ApplicationRecord
     ((job_search_end_month.year - job_search_start_month.year) * 12 +
       (job_search_end_month.month - job_search_start_month.month)).abs
   end
-  
+
   def total_income
     expenditures.where(category: :income).sum(:amount)
   end
