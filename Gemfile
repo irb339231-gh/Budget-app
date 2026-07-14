@@ -23,6 +23,10 @@ gem "jbuilder"
 group :test do
   gem "simplecov", require: false
 end
+
+group :development, :test do
+  gem "factory_bot_rails"
+end
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
