@@ -1,12 +1,12 @@
 require "simplecov"
 SimpleCov.start "rails" do
   enable_coverage :branch
-  track_files "{app,lib}/**/*.rb"
+  cover "{app,lib}/**/*.rb"
 
-  add_filter "/test/"
-  add_filter "/config/"
-  add_filter "/db/"
-  add_filter "/vendor/"
+  skip "/test/"
+  skip "/config/"
+  skip "/db/"
+  skip "/vendor/"
 end
 
 ENV["RAILS_ENV"] ||= "test"
@@ -20,6 +20,7 @@ module ActiveSupport
 
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
+    include FactoryBot::Syntax::Methods
 
     # Add more helper methods to be used by all tests here...
   end
