@@ -1,5 +1,6 @@
 class FutureExpensesController < ApplicationController
 before_action :authenticate_user!
+before_action :set_future_expense, only: [:edit, :update, :destroy]
 
   def index
     @future_expenses = current_user.expenditures.where(category: :future_expense)
@@ -24,11 +25,9 @@ before_action :authenticate_user!
   end
 
   def edit
-    @future_expense = current_user.expenditures.find(params[:id])
   end
 
   def update
-    @future_expense = current_user.expenditures.find(params[:id])
     if @future_expense.update(future_expense_params)
       redirect_to edit_all_future_expenses_path, notice: "将来の支出を更新しました"
     else
@@ -37,7 +36,6 @@ before_action :authenticate_user!
   end
 
   def destroy
-    @future_expense = current_user.expenditures.find(params[:id])
     @future_expense.destroy
     redirect_to edit_all_future_expenses_path, notice: "将来の支出を削除しました"
   end
@@ -46,5 +44,9 @@ before_action :authenticate_user!
 
   def future_expense_params
     params.require(:future_expense).permit(:name, :amount)
+  end
+
+  def set_future_expense
+    @future_expense = current_user.expenditures.find(params[:id])
   end
 end
