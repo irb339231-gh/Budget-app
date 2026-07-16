@@ -49,4 +49,3 @@ class FixedCostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_all_fixed_costs_path
   end
 end
-

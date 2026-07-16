@@ -1,7 +1,6 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-
   test "有効なユーザーは保存できる" do
     @user = build(:user)
     assert @user.valid?

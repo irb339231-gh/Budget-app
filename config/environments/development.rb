@@ -15,7 +15,7 @@ Rails.application.configure do
     Bullet.rails_logger = true
     Bullet.add_footer = true
   end
-  
+
   config.enable_reloading = true
 
   # Do not eager load code on boot.
