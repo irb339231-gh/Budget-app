@@ -1,6 +1,6 @@
 class FutureExpensesController < ApplicationController
 before_action :authenticate_user!
-before_action :set_future_expense, only: [:edit, :update, :destroy]
+before_action :set_future_expense, only: [ :edit, :update, :destroy ]
 
   def index
     @future_expenses = current_user.expenditures.where(category: :future_expense)

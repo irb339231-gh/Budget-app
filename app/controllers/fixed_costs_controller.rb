@@ -1,6 +1,6 @@
 class FixedCostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_fixed_cost, only: [:edit, :update, :destroy]
+  before_action :set_fixed_cost, only: [ :edit, :update, :destroy ]
 
   def index
     @fixed_costs = current_user.expenditures.where(category: :fixed_cost)
