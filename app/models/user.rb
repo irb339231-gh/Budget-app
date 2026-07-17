@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :expenditures, dependent: :destroy
+  has_many :transactions, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
   # Include default devise modules. Others available are:
@@ -8,7 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def available_amount
-    total_income - total_future_expenses - total_fixed_costs
+    total_income - total_future_expenses - total_fixed_costs - total_transactions_expenses + total_transactions_incomes
   end
 
   def job_search_months
@@ -27,5 +28,13 @@ class User < ApplicationRecord
 
   def total_fixed_costs
     expenditures.where(category: :fixed_cost).sum(:amount) * job_search_months
+  end
+
+  def total_transactions_expenses
+    transactions.where(category: :expense).sum(:amount)
+  end
+
+  def total_transactions_incomes
+    transactions.where(category: :income).sum(:amount)
   end
 end

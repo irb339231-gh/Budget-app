@@ -60,11 +60,11 @@
             </tr>
             <tr>
               <td>随時支出</td>
-              <td class="text-right">¥0</td>
+              <td class="text-right">¥<%= number_with_delimiter(current_user.total_transactions_expenses) %></td>
             </tr>
             <tr>
               <td>随時収入</td>
-              <td class="text-right">¥0</td>
+              <td class="text-right">¥<%= number_with_delimiter(current_user.total_transactions_incomes) %></td>
             </tr>
           </tbody>
         </table>
@@ -76,19 +76,31 @@
   <div class="card bg-neutral shadow-md mb-6">
     <div class="card-body">
       <h2 class="card-title">随時支出・収入</h2>
-      <div class="flex gap-4 items-center">
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">随時支出</span>
+      <div class="grid grid-cols-2 gap-4">
+
+        <%# 随時支出フォーム %>
+        <%= form_with url: transactions_path, method: :post, scope: :transaction do |f| %>
+          <%= f.hidden_field :category, value: :expense %>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">随時支出</span>
           </label>
-          <input type="number" placeholder="¥0" class="input input-bordered input-sum w-36">
+          <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
+          <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
         </div>
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">随時収入</span>
-          </label>
-          <input type="number" placeholder="¥0" class="input input-bordered input-sm w-36">
-        </div>
+        <% end %>
+
+        <%# 随時収入フォーム %>
+        <%= form_with url: transactions_path, method: :post, scope: :transaction do |f| %>
+          <%= f.hidden_field :category, value: :income %>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">随時収入</span>
+            </label>
+            <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
+            <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
