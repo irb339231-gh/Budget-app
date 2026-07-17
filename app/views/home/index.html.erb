@@ -88,6 +88,7 @@
             <label class="label">
               <span class="label-text">随時支出</span>
           </label>
+          <%= f.text_field :name, placeholder: "支出の名前(任意)", class: "input input-bordered w-full mb-2" %>
           <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
           <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
         </div>
@@ -100,6 +101,7 @@
             <label class="label">
               <span class="label-text">随時収入</span>
             </label>
+            <%= f.text_field :name, placeholder: "収入の名前(任意)", class: "input input-bordered w-full mb-2" %>
             <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
             <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
           </div>
