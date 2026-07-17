@@ -75,7 +75,10 @@
   <%# 随時支出・収入の入力欄 %>
   <div class="card bg-neutral shadow-md mb-6">
     <div class="card-body">
-      <h2 class="card-title">随時支出・収入</h2>
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="card-title">随時支出・収入</h2>
+        <%= link_to "履歴を見る", transactions_path, class: "btn btn-outline btn-sm" %>
+      </div>
       <div class="grid grid-cols-2 gap-4">
 
         <%# 随時支出フォーム %>
@@ -85,6 +88,7 @@
             <label class="label">
               <span class="label-text">随時支出</span>
           </label>
+          <%= f.text_field :name, placeholder: "支出の名前(任意)", class: "input input-bordered w-full mb-2" %>
           <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
           <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
         </div>
@@ -97,6 +101,7 @@
             <label class="label">
               <span class="label-text">随時収入</span>
             </label>
+            <%= f.text_field :name, placeholder: "収入の名前(任意)", class: "input input-bordered w-full mb-2" %>
             <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
             <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
           </div>

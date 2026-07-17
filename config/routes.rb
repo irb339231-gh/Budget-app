@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get "fixed_costs/edit_all", to: "fixed_costs#edit_all", as: :edit_all_fixed_costs
   resources :fixed_costs
 
-  resources :transactions, only: [ :create ]
+  resources :transactions, only: [ :index, :create ]
 
   get "up" => "rails/health#show", as: :rails_health_check
 
