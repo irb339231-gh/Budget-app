@@ -75,7 +75,10 @@
   <%# 随時支出・収入の入力欄 %>
   <div class="card bg-neutral shadow-md mb-6">
     <div class="card-body">
-      <h2 class="card-title">随時支出・収入</h2>
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="card-title">随時支出・収入</h2>
+        <%= link_to "履歴を見る", transactions_path, class: "btn btn-outline btn-sm" %>
+      </div>
       <div class="grid grid-cols-2 gap-4">
 
         <%# 随時支出フォーム %>
