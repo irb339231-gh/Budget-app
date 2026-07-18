@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#top'
   get 'pages/top'
+  get "users/profile", to: "users#show", as: :user_profile
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

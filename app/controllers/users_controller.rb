@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+  end
+
   def update_job_search
     if current_user.update(job_search_params)
       redirect_to home_path, notice: "転職活動期間を設定しました"
