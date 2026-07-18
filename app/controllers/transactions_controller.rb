@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_transaction, only: [ :destroy ]
 
   def index
     @transactions = current_user.transactions.order(created_at: :desc)
@@ -14,7 +15,16 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def destroy
+    @transaction.destroy
+    redirect_to transactions_path, notice: "取引を削除しました"
+  end
+
+
   private
+  def set_transaction
+    @transaction = current_user.transactions.find(params[:id])
+  end
 
   def transaction_params
     params.require(:transaction).permit(:name, :category, :amount)
