@@ -1,0 +1,27 @@
+ja:
+  devise:
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+      already_signed_out: "既にログアウト済みです"
+    registrations:
+      signed_up: "アカウント登録が完了しました"
+      updated: "アカウント情報を更新しました"
+      destroyed: "アカウントを削除しました"
+    passwords:
+      send_instructions: "パスワードのリセット手順をメールで送信しました"
+      updated: "パスワードを変更しました"
+      updated_not_active: "パスワードを変更しました"
+    confirmations:
+      send_instructions: "確認メールを送信しました"
+      confirmed: "メールアドレスの確認が完了しました"
+    unlocks:
+      send_instructions: "アカウントのロック解除手順をメールで送信しました"
+      unlocked: "アカウントのロックを解除しました"
+    mailer:
+      confirmation_instructions:
+        subject: "メールアドレスの確認"
+      reset_password_instructions:
+        subject: "パスワードリセットの手順"
+      unlock_instructions:
+        subject: "アカウントのロック解除"
