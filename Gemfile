@@ -60,6 +60,7 @@ end
 
 group :development do
   gem "bullet"
+  gem "letter_opener_web"
 end
 
 group :test do
