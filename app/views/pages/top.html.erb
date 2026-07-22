@@ -1,3 +1,4 @@
+<%# ヒーローセクション %>
 <div class="min-h-screen flex items-center justify-center bg-base-200">
   <div class="text-center px-4">
     <div class="badge badge-outline badge-lg mb-4">転職活動中の方へ</div>
@@ -7,7 +8,7 @@
       今すぐ解消する
     </h1>
     <p class="text-lg text-gray-500 mb-8">
-      貯蓄・退職金から今使える金額を自動算出。<br />
+      現在の収入と支出から今使える金額を自動算出。<br />
       「これを買っても大丈夫？」がすぐわかる。
     </p>
     <div class="flex gap-4 justify-center">
@@ -16,10 +17,76 @@
     </div>
   </div>
 </div>
-<div class="flex w-full flex-col">
-  <div class="card bg-base-300 rounded-box grid h-20 place-items-center">Step 1: 登録</div>
-  <div class="divider"></div>
-  <div class="card bg-base-300 rounded-box grid h-20 place-items-center">Step 2: ログイン</div>
-  <div class="divider"></div>
-  <div class="card bg-base-300 rounded-box grid h-20 place-items-center">Step 3: 今使える金額の確認</div>
+
+<%# サービスの特徴 %>
+<div class="bg-base-100 py-16 px-4">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">こんなお悩みありませんか？</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card bg-base-200 shadow-md">
+        <div class="card-body text-center">
+          <div class="text-4xl mb-4">😰</div>
+          <h3 class="card-title justify-center">今いくら使えるかわからない</h3>
+          <p class="text-gray-500">現在の収入と支出から今使える金額を自動算出...</p>
+        </div>
+      </div>
+      <div class="card bg-base-200 shadow-md">
+        <div class="card-body text-center">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="card-title justify-center">固定費の管理が大変</h3>
+          <p class="text-gray-500">毎月の固定費を考えると転職活動に集中できない...</p>
+        </div>
+      </div>
+      <div class="card bg-base-200 shadow-md">
+        <div class="card-body text-center">
+          <div class="text-4xl mb-4">💸</div>
+          <h3 class="card-title justify-center">将来の支出が心配</h3>
+          <p class="text-gray-500">引っ越し費用など将来の支出を考えると不安...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# 使い方 %>
+<div class="bg-base-200 py-16 px-4">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">使い方はかんたん3ステップ</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card bg-base-100 shadow-md">
+        <div class="card-body text-center">
+          <div class="badge badge-primary badge-lg mb-4">Step 1</div>
+          <h3 class="card-title justify-center">無料登録する</h3>
+          <p class="text-gray-500">メールアドレスとパスワードだけで
+            すぐに始められます</p>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-md">
+        <div class="card-body text-center">
+          <div class="badge badge-primary badge-lg mb-4">Step 2</div>
+          <h3 class="card-title justify-center">収入・支出を登録する</h3>
+          <p class="text-gray-500">貯蓄・退職金・固定費・将来の支出を
+            入力するだけ</p>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-md">
+        <div class="card-body text-center">
+          <div class="badge badge-primary badge-lg mb-4">Step 3</div>
+          <h3 class="card-title justify-center">今使える金額を確認する</h3>
+          <p class="text-gray-500">自動で計算された「今使える金額」を
+            確認してお金の不安を解消</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# CTA %>
+<div class="bg-primary text-primary-content py-16 px-4">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold mb-6">お金の不安をなくして
+      転職活動に集中しよう</h2>
+    <p class="text-lg mb-8">無料で始められます</p>
+    <%= link_to "今すぐ無料登録する", new_user_registration_path, class: "btn btn-lg bg-white text-primary hover:bg-gray-100" %>
+  </div>
 </div>
