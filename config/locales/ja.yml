@@ -1,4 +1,24 @@
 ja:
+  errors:
+    messages:
+      not_saved:
+        one: "エラーが1件あります。"
+        other: "エラーが%{count}件あります。"
+  activerecord:
+    errors:
+      messages:
+        blank: "を入力してください"
+        too_long: "は%{count}文字以内で入力してください"
+        too_short: "は%{count}文字以上で入力してください"
+        invalid: "は不正な値です"
+        taken: "はすでに使用されています"
+    attributes:
+      user:
+        name: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        current_password: "現在のパスワード"
   devise:
     sessions:
       signed_in: "ログインしました"
@@ -25,3 +45,12 @@ ja:
         subject: "パスワードリセットの手順"
       unlock_instructions:
         subject: "アカウントのロック解除"
+    failure:
+      invalid: "メールアドレスまたはパスワードが違います。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      already_authenticated: "すでにログインしています。"
+      unauthenticated: "ログインしてください。"
+      unconfirmed: "メールアドレスの確認が完了していません。"
+      locked: "アカウントがロックされています。"
+      timeout: "セッションがタイムアウトしました。再度ログインしてください。"
+      inactive: "アカウントが無効です。"
