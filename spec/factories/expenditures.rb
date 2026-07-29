@@ -1,11 +1,4 @@
 FactoryBot.define do
-  factory :expenditure do
-    association :user
-    name { "テストデータ" }
-    category { :income }
-    amount { 100000 }
-  end
-
   factory :income, class: Expenditure do
     association :user
     name { "貯蓄" }

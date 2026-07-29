@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
