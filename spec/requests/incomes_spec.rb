@@ -38,12 +38,12 @@ RSpec.describe "Incomes", type: :request do
     context "無効なデータの場合" do
       it "収入を登録できない" do
         expect {
-          post incomes_path, params: { income: { name: "", amount: nil} }
+          post incomes_path, params: { income: { name: "", amount: nil } }
         }.not_to change(Expenditure, :count)
       end
     end
   end
-  
+
   describe "PATCH /incomes/:id" do
     context "有効なデータの場合" do
       it "収入を更新できる" do
@@ -58,7 +58,7 @@ RSpec.describe "Incomes", type: :request do
     context "有効なデータの場合" do
       it "収入を削除できる" do
         income
-        expect { 
+        expect {
           delete income_path(income)
         }.to change(Expenditure, :count).by(-1)
         expect(response).to redirect_to edit_all_incomes_path
@@ -66,5 +66,3 @@ RSpec.describe "Incomes", type: :request do
     end
   end
 end
-
-

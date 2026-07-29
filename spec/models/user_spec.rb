@@ -29,10 +29,10 @@ RSpec.describe User, type: :model do
     end
 
     it "passwordが6文字未満の場合は無効" do
-      user = build(:user, password: "12345" )
+      user = build(:user, password: "12345")
       expect(user).not_to be_valid
     end
-  end  
+  end
 
   describe "算出ロジック" do
     it "total_incomeが正しく計算される" do
@@ -83,22 +83,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-
-
-
-
-
-  
-
-
-
-
-
-      
-
-
-
-
-  
-
-

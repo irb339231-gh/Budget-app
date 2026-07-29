@@ -38,12 +38,12 @@ RSpec.describe "Fixed_costs", type: :request do
     context "無効なデータの場合" do
       it "固定費を登録できない" do
         expect {
-          post fixed_costs_path, params: { fixed_cost: { name: "", amount: nil} }
+          post fixed_costs_path, params: { fixed_cost: { name: "", amount: nil } }
         }.not_to change(Expenditure, :count)
       end
     end
   end
-  
+
   describe "PATCH /fixed_costs/:id" do
     context "有効なデータの場合" do
       it "固定費を更新できる" do
@@ -58,7 +58,7 @@ RSpec.describe "Fixed_costs", type: :request do
     context "有効なデータの場合" do
       it "固定費を削除できる" do
         fixed_cost
-        expect { 
+        expect {
           delete fixed_cost_path(fixed_cost)
         }.to change(Expenditure, :count).by(-1)
         expect(response).to redirect_to edit_all_fixed_costs_path
@@ -66,5 +66,3 @@ RSpec.describe "Fixed_costs", type: :request do
     end
   end
 end
-
-

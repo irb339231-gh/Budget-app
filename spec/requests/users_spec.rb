@@ -22,7 +22,7 @@ RSpec.describe "Users", type: :request do
         expect(user.job_search_end_month).to eq Date.new(2026, 10, 1)
       end
     end
-    
+
     context "未ログインの場合" do
       before { sign_out user }
       it "ログイン画面にリダイレクトされる" do
@@ -37,6 +37,3 @@ RSpec.describe "Users", type: :request do
     end
   end
 end
-
-
-

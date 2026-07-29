@@ -55,7 +55,7 @@ RSpec.describe "Transactions", type: :request do
     context "有効なデータの場合" do
       it "随時支出を削除できる" do
         transaction
-        expect { 
+        expect {
           delete transaction_path(transaction)
         }.to change(Transaction, :count).by(-1)
         expect(response).to redirect_to transactions_path
@@ -63,10 +63,3 @@ RSpec.describe "Transactions", type: :request do
     end
   end
 end
-
-
-
-
-
-
-

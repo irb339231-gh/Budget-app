@@ -38,12 +38,12 @@ RSpec.describe "Future_expenses", type: :request do
     context "無効なデータの場合" do
       it "支出を登録できない" do
         expect {
-          post future_expenses_path, params: { future_expense: { name: "", amount: nil} }
+          post future_expenses_path, params: { future_expense: { name: "", amount: nil } }
         }.not_to change(Expenditure, :count)
       end
     end
   end
-  
+
   describe "PATCH /future_expenses/:id" do
     context "有効なデータの場合" do
       it "支出を更新できる" do
@@ -58,7 +58,7 @@ RSpec.describe "Future_expenses", type: :request do
     context "有効なデータの場合" do
       it "支出を削除できる" do
         future_expense
-        expect { 
+        expect {
           delete future_expense_path(future_expense)
         }.to change(Expenditure, :count).by(-1)
         expect(response).to redirect_to edit_all_future_expenses_path
@@ -66,5 +66,3 @@ RSpec.describe "Future_expenses", type: :request do
     end
   end
 end
-
-

@@ -41,7 +41,7 @@ RSpec.describe Expenditure, type: :model do
       expenditure = build(:income, category: nil)
       expect(expenditure).not_to be_valid
     end
-  
+
   describe "enum" do
     it "categoryがincomeの場合は有効" do
       expenditure = build(:income)
