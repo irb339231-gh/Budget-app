@@ -68,6 +68,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      
+      - name: Bulid assets
+        run: yarn bulid
           
       - name: Set up database
         env:
