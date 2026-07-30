@@ -22,6 +22,9 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 gem "rails-i18n"
 
+gem "sentry-ruby"
+gem "sentry-rails"
+
 group :test do
   gem "simplecov", require: false
 end
