@@ -1,12 +1,41 @@
 <div class="container mx-auto px-4 py-8">
 
   <%# 今使える金額の表示 %>
-  <div class="card bg-primary text-primary-content shadow-xl mb-6">
-    <div class="card-body text-center">
-      <p class="text-lg">あなたの今使える金額は</p>
-      <p class="text-5xl font-bold">¥<%= number_with_delimiter(@available_amount) %></p>
-    </div>
+<div class="tabs tabs-lift">
+  <label class="tab">
+    <input type="radio" name="my_tabs_4" checked="checked"/>
+    All
+  </label>
+  <div class="tab-content bg-purple-600 border-base-300 p-6">
+    <p class="text-lg">あなたの今使える金額は</p>
+    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@available_amount) %></p>
   </div>
+  <label class="tab">
+    <input type="radio" name="my_tabs_4" />
+    daily
+  </label>
+  <div class="tab-content bg-purple-600 border-base-300 p-6">
+    <p class="text-lg">１日あたり</p>
+    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@daily_available_amount) %></p>
+  </div>
+  <label class="tab">
+    <input type="radio" name="my_tabs_4" />
+    weekly
+  </label>
+  <div class="tab-content bg-purple-600 border-base-300 p-6">
+    <p class="text-lg">１週間あたり</p>
+    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@weekly_available_amount) %></p>
+  </div>
+  <label class="tab">
+    <input type="radio" name="my_tabs_4" />
+    monthly
+  </label>
+  <div class="tab-content bg-purple-600 border-base-300 p-6">
+    <p class="text-lg">１月あたり</p>
+    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@monthly_available_amount) %></p>
+  </div>
+</div>
+
   
 <%# 転職活動期間 %>
 <div class="card bg-neutral shadow-md mb-6">
