@@ -13,23 +13,23 @@ class User < ApplicationRecord
   end
 
   def daily_available_amount
-    return 0 if job_search_days.zero? #daysが0の場合は除く
+    return 0 if job_search_days.zero? # daysが0の場合は除く
     available_amount / job_search_days
   end
 
   def weekly_available_amount
-    return 0 if job_search_days.zero? #daysが0の場合は除く
-    available_amount / (job_search_days / 7) #転職活動期間を7で割る
+    return 0 if job_search_days.zero? # daysが0の場合は除く
+    available_amount / (job_search_days / 7) # 転職活動期間を7で割る
   end
 
   def monthly_available_amount
-    return 0 if job_search_months.zero? #monthsが0の場合は除く
+    return 0 if job_search_months.zero? # monthsが0の場合は除く
     available_amount / job_search_months
   end
 
   def job_search_days
     return 0 if job_search_start_month.nil? || job_search_end_month.nil?
-    (job_search_end_month - job_search_start_month ).to_i
+    (job_search_end_month - job_search_start_month).to_i
   end
 
   def job_search_months
