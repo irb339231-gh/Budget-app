@@ -1,0 +1,34 @@
+<div class="container mx-auto px-4 py-8 max-w-lg">
+  <ul class="steps w-full mb-8">
+    <li class="step step-primary">転職期間</li>
+    <li class="step step-primary">収入</li>
+    <li class="step step-primary">将来の支出</li>
+    <li class="step step-primary">固定費</li>
+  </ul>
+
+  <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Step4：固定費の入力</h2>
+      <p class="text-gray-500 mb-4">ローン・家賃などを入力してください</p>
+
+      <%= form_with url: wizard_path(step), method: :patch do |f| %>
+        <div class="form-control mb-4">
+          <%= f.label :name, "固定費名", class: "label" %>
+          <%= f.text_field :name, class: "input input-bordered w-full",
+              placeholder: "例：ローン・家賃", name: "fixed_cost[name]" %>
+        </div>
+
+        <div class="form-control mb-6">
+          <%= f.label :amount, "金額", class: "label" %>
+          <%= f.number_field :amount, class: "input input-bordered w-full",
+              placeholder: "例：1000000", name: "fixed_cost[amount]" %>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <%= f.submit "完了", class: "btn btn-primary w-full" %>
+          <%= link_to "スキップ", home_path, class: "btn btn-outline w-full" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
