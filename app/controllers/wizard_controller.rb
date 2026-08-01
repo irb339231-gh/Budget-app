@@ -91,5 +91,4 @@ class WizardController < ApplicationController
   def fixed_cost_params
     params.require(:fixed_cost).permit(:name, :amount)
   end
-
 end
