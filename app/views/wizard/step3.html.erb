@@ -1,9 +1,17 @@
 <div class="container mx-auto px-4 py-8 max-w-lg">
   <ul class="steps w-full mb-8">
-    <li class="step step-primary">転職期間</li>
-    <li class="step step-primary">収入</li>
-    <li class="step step-primary">将来の支出</li>
-    <li class="step">固定費</li>
+    <li class="step step-primary">
+      <%= link_to "転職期間", wizard_path(:step1) %>
+    </li>
+    <li class="step step-primary">
+      <%= link_to "収入", wizard_path(:step2) %>
+    </li>
+    <li class="step step-primary">
+      <%= link_to "将来の支出", wizard_path(:step3) %>
+    </li>
+    <li class="step">
+      <%= link_to "固定費", wizard_path(:step4) %>
+    </li>
   </ul>
 
   <div class="card bg-base-100 shadow-xl">
@@ -58,8 +66,8 @@
       <% end %>
 
         <div class="grid grid-cols-2 gap-4">
+          <%= link_to "戻る", wizard_path(:step2), class: "btn btn-primary w-full" %>
           <%= link_to "次へ", next_wizard_path, class: "btn btn-primary w-full" %>
-          <%= link_to "スキップ", next_wizard_path, class: "btn btn-outline w-full" %>
         </div>
     </div>
   </div>
