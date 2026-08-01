@@ -30,6 +30,11 @@ class WizardController < ApplicationController
     render_wizard @user
   end
 
+  def finish_wizard_path
+    current_user.update(wizard_completed: true)
+    home_path
+  end
+
   private
 
   def job_search_params

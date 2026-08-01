@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   def after_sign_in_path_for(resource)
-    if resource.job_search_start_month.nil?
-      wizard_path(:step1)
-    else
+    if resource.wizard_completed?
       stored_location_for(resource) || home_path
+    else
+      wizard_path(:step1)
     end
   end
 
