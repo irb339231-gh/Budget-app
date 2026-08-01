@@ -37,7 +37,11 @@ before_action :set_future_expense, only: [ :edit, :update, :destroy ]
 
   def destroy
     @future_expense.destroy
-    redirect_to edit_all_future_expenses_path, notice: "将来の支出を削除しました"
+    if request.referer&.include?("wizard")
+      redirect_to wizard_path(:step3), notice: "将来の支出を削除しました"
+    else
+      redirect_to edit_all_future_expenses_path, notice: "将来の支出を削除しました"
+    end
   end
 
   private

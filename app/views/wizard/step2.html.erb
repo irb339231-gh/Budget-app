@@ -11,6 +11,36 @@
       <h2 class="card-title">Step2：収入の入力</h2>
       <p class="text-gray-500 mb-4">貯蓄・退職金などを入力してください</p>
 
+      <% if @incomes.any? %>
+        <div class="overflow-x-auto mb-4">
+          <table class="table table-zebra">
+            <thead>
+              <tr>
+                <th>収入名</th>
+                <th class="text-right">金額</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @incomes.each do |income| %>
+                <tr>
+                  <td><%= income.name %></td>
+                  <td class="text-right"><%= number_with_delimiter(income.amount) %></td>
+                  <td>
+                    <%= button_to "削除", income_path(income), method: :delete,
+                    class: "btn btn-error btn-xs",
+                    data: { turbo_confirm: "本当に削除しますか？" } %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-right font-bold mb-4">
+          合計: <%= number_with_delimiter(@incomes.sum(:amount)) %>
+        </p>
+      <% end %>
+
       <%= form_with url: wizard_path(step), method: :patch do |f| %>
         <div class="form-control mb-4">
           <%= f.label :name, "収入名", class: "label" %>
@@ -24,11 +54,13 @@
               placeholder: "例：1000000", name: "income[amount]" %>
         </div>
 
+        <%= f.submit "追加する", class: "btn btn-outline w-full mb-4" %>
+      <% end %>
+
         <div class="grid grid-cols-2 gap-4">
-          <%= f.submit "次へ", class: "btn btn-primary w-full" %>
+          <%= link_to "次へ", next_wizard_path, class: "btn btn-primary w-full" %>
           <%= link_to "スキップ", next_wizard_path, class: "btn btn-outline w-full" %>
         </div>
-      <% end %>
     </div>
   </div>
 </div>
