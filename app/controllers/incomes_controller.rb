@@ -37,7 +37,11 @@ class IncomesController < ApplicationController
 
   def destroy
     @income.destroy
-    redirect_to edit_all_incomes_path, notice: "収入を削除しました"
+    if request.referer&.include?("wizard")
+      redirect_to wizard_path(:step2), notice: "収入を削除しました"
+    else
+      redirect_to edit_all_incomes_path, notice: "収入を削除しました"
+    end
   end
 
   private

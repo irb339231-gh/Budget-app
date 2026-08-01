@@ -1,0 +1,74 @@
+<div class="container mx-auto px-4 py-8 max-w-lg">
+  <ul class="steps w-full mb-8">
+    <li class="step step-primary">
+      <%= link_to "転職期間", wizard_path(:step1) %>
+    </li>
+    <li class="step step-primary">
+      <%= link_to "収入", wizard_path(:step2) %>
+    </li>
+    <li class="step">
+      <%= link_to "将来の支出", wizard_path(:step3) %>
+    </li>
+    <li class="step">
+      <%= link_to "固定費", wizard_path(:step4) %>
+    </li>
+  </ul>
+
+  <div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Step2：収入の入力</h2>
+      <p class="text-gray-500 mb-4">貯蓄・退職金などを入力してください</p>
+
+      <% if @incomes.any? %>
+        <div class="overflow-x-auto mb-4">
+          <table class="table table-zebra">
+            <thead>
+              <tr>
+                <th>収入名</th>
+                <th class="text-right">金額</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @incomes.each do |income| %>
+                <tr>
+                  <td><%= income.name %></td>
+                  <td class="text-right"><%= number_with_delimiter(income.amount) %></td>
+                  <td>
+                    <%= button_to "削除", income_path(income), method: :delete,
+                    class: "btn btn-error btn-xs",
+                    data: { turbo_confirm: "本当に削除しますか？" } %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-right font-bold mb-4">
+          合計: <%= number_with_delimiter(@incomes.sum(:amount)) %>
+        </p>
+      <% end %>
+
+      <%= form_with url: wizard_path(step), method: :patch do |f| %>
+        <div class="form-control mb-4">
+          <%= f.label :name, "収入名", class: "label" %>
+          <%= f.text_field :name, class: "input input-bordered w-full",
+              placeholder: "例：貯蓄、退職金", name: "income[name]" %>
+        </div>
+
+        <div class="form-control mb-6">
+          <%= f.label :amount, "金額", class: "label" %>
+          <%= f.number_field :amount, class: "input input-bordered w-full",
+              placeholder: "例：1000000", name: "income[amount]" %>
+        </div>
+
+        <%= f.submit "追加する", class: "btn btn-outline w-full mb-4" %>
+      <% end %>
+
+        <div class="grid grid-cols-2 gap-4">
+          <%= link_to "戻る", wizard_path(:step1), class: "btn btn-primary w-full" %>
+          <%= link_to "次へ", next_wizard_path, class: "btn btn-primary w-full" %>
+        </div>
+    </div>
+  </div>
+</div>

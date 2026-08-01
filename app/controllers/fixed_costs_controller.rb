@@ -37,7 +37,11 @@ class FixedCostsController < ApplicationController
 
   def destroy
     @fixed_cost.destroy
-    redirect_to edit_all_fixed_costs_path, notice: "固定費を削除しました"
+    if request.referer&.include?("wizard")
+      redirect_to wizard_path(:step4), notice: "固定費を削除しました"
+    else
+      redirect_to edit_all_fixed_costs_path, notice: "固定費を削除しました"
+    end
   end
 
   private
