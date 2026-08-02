@@ -57,4 +57,9 @@ class User < ApplicationRecord
   def total_transactions_incomes
     transactions.where(category: :income).sum(:amount)
   end
+
+  def available_amount_percentage
+    return 0 if total_income.zero? # total_incomeが0の場合は除く
+    (available_amount.to_f / total_income.to_f * 100).round
+  end
 end

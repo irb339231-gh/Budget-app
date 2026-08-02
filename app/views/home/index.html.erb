@@ -1,12 +1,22 @@
 <div class="container mx-auto px-4 py-8">
 
+<%# 色の決定　%>
+<% bg_color = if @available_amount_percentage >= 70
+                "bg-success"
+              elsif @available_amount_percentage >= 40
+                "bg-warning"
+              else
+                "bg-error"
+              end
+%>
+
   <%# 今使える金額の表示 %>
 <div class="tabs tabs-lift">
   <label class="tab">
     <input type="radio" name="my_tabs_4" checked="checked"/>
     All
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
+  <div class="tab-content <%= bg_color %> border-base-300 p-6">
     <p class="text-lg">あなたの今使える金額は</p>
     <p class="text-5xl font-bold">¥<%= number_with_delimiter(@available_amount) %></p>
   </div>
@@ -14,7 +24,7 @@
     <input type="radio" name="my_tabs_4" />
     daily
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
+  <div class="tab-content <%= bg_color %> border-base-300 p-6">
     <p class="text-lg">１日あたり</p>
     <p class="text-5xl font-bold">¥<%= number_with_delimiter(@daily_available_amount) %></p>
   </div>
@@ -22,7 +32,7 @@
     <input type="radio" name="my_tabs_4" />
     weekly
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
+  <div class="tab-content <%= bg_color %> border-base-300 p-6">
     <p class="text-lg">１週間あたり</p>
     <p class="text-5xl font-bold">¥<%= number_with_delimiter(@weekly_available_amount) %></p>
   </div>
@@ -30,7 +40,7 @@
     <input type="radio" name="my_tabs_4" />
     monthly
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
+  <div class="tab-content <%= bg_color %> border-base-300 p-6">
     <p class="text-lg">１月あたり</p>
     <p class="text-5xl font-bold">¥<%= number_with_delimiter(@monthly_available_amount) %></p>
   </div>
