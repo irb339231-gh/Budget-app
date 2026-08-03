@@ -1,0 +1,9 @@
+:concurrency: 5
+
+:queues:
+  - default
+
+:schedule:
+  weekly_reminder:
+    cron: "0 8 * * 5"
+    class: WeeklyReminderJob
