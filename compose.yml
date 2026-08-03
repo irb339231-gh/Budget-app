@@ -32,7 +32,29 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  redis:
+    image: "redis:7.0-alpine"
+    volumes:
+      - redis_volume:/data
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec sidekiq
+    volumes:
+      - .:/myapp
+      - bundle_data:/usr/local/bundle:cached
+    environment:
+      TZ: Asia/Tokyo
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
 volumes:
   bundle_data:
   postgresql_data:
   node_modules:
+  redis_volume:

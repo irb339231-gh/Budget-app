@@ -78,3 +78,6 @@ end
 gem "devise", "~> 5.0"
 
 gem "wicked"
+
+gem "sidekiq"
+gem "sidekiq-scheduler"
