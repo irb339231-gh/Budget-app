@@ -7,3 +7,6 @@
   weekly_reminder:
     cron: "0 8 * * 5"
     class: WeeklyReminderJob
+  weekly_report:
+    cron: "0 0 * * 1"
+    class: WeeklyReportJob
