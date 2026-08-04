@@ -6,4 +6,4 @@ class ReportMailer < ApplicationMailer
     @daily_available_amount = user.daily_available_amount
     mail(to: @user.email, subject: '【Budget App】今週の使える金額レポート')
   end
-end 
+end
