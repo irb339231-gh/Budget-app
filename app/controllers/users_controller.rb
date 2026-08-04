@@ -35,5 +35,5 @@ class UsersController < ApplicationController
 
   def email_notification_params
     params.require(:user).permit(:email_notification)
-  end 
+  end
 end
