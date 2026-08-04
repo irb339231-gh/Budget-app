@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   patch "home/update_job_search", to: "users#update_job_search", as: :update_job_search
   # Defines the root path route ("/")
   # root "posts#index"
+  patch "users/update_email_notification", to: "users#update_email_notification", as: :update_email_notification
 
   resources :wizard, only: [ :show, :update ]
 
