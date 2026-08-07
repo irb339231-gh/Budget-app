@@ -7,6 +7,6 @@ class ReminderMailer < ApplicationMailer
   def weekly_reminder(user)
     @user = user
 
-    mail(to: @user.email, subject: "【Budget App】Weekly Reminder")
+    mail(to: @user.email, subject: "【いくら。】Weekly Reminder")
   end
 end

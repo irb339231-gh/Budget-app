@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="retro">
   <head>
     <title><%= content_for(:title) || "Myapp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,12 +19,12 @@
   </head>
 
   <body>
-    <div class="navbar bg-base-100 shadow-md">
+    <div class="navbar bg-base-200 shadow-md">
       <div class="navbar-start">
         <% if user_signed_in? %>
-          <a class="btn btn-ghost text-xl" href="<%= home_path %>">Budget App</a>
+          <a class="btn btn-ghost text-xl" href="<%= home_path %>">いくら。</a>
         <% else %>
-          <a class="btn btn-ghost text-xl" href="<%= root_path %>">Budget App</a>
+          <a class="btn btn-ghost text-xl" href="<%= root_path %>">いくら。</a>
         <% end %>
       </div>
       <div class="navbar-end">
@@ -59,7 +59,7 @@
 
     <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
       <aside>
-        <p class="font-bold text-lg">Budget App</p>
+        <p class="font-bold text-lg">いくら。</p>
         <p>転職活動中のお金の不安を解消する</p>
       </aside>
       <nav>

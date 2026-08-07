@@ -1,121 +1,130 @@
-<div class="container mx-auto px-4 py-8">
-  <div class="card bg-base-100 shadow-xl">
-    <div class="card-body">
-      <div class="card bg-primary text-primary-content shadow-xl mb-6">
-        <div class="card-body text-center">
-          <h2 class="text-2xl font-bold">随時支出・収入履歴</h2>
-        </div>
-      </div>
+<div class="container mx-auto px-4 py-8 max-w-2xl">
+  <%# ヘッダーカード %>
+  <div class="rounded-3xl p-6 mb-6"
+    style="background: linear-gradient(135deg, #f97316, #ea580c);">
+    <p class="text-2xl font-bold">随時支出・収入</p>
+  </div>
 
+  <%# 一覧 %>
+  <div class="card bg-base-200 shadow-xl mb-6">
+    <div class="card-body">
       <div class="tabs tabs-lift">
         <%# すべてタブ %>
         <label class="tab">
           <input type="radio" name="transaction_tabs" checked="checked" />
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+          </svg>
           すべて
         </label>
 
-        <div class="tab-content bg-base-100 border-base-300 p-6">
-          <table class="table table-zebra">
-            <thead>
-              <tr>
-                <th>種別</th>
-                <th>名前</th>
-                <th class="text-right">金額</th>
-                <th>登録日</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @transactions.each do |transaction| %>
+          <div class="tab-content bg-base-100 border-base-300 p-6 rounded-box rounded-2xl">
+            <table class="table table-zebra">
+              <thead>
                 <tr>
-                  <td>
-                    <% if transaction.expense? %>
-                      <span class="badge badge-error">支出</span>
-                    <% else %>
-                      <span class="badge badge-success">収入</span>
-                    <% end %>
-                  </td>
-                  <td><%= transaction.name.presence || "未入力" %></td>
-                  <td class="text-right">¥<%= number_with_delimiter(transaction.amount) %></td>
-                  <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
-                  <td>
-                    <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs", data: { turbo_confirm: "本当に削除しますか？" } %>
-                  </td>
+                  <th>種別</th>
+                  <th>名前</th>
+                  <th class="text-right">金額</th>
+                  <th>登録日</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                <% @transactions.each do |transaction| %>
+                  <tr>
+                    <td>
+                      <% if transaction.expense? %>
+                        <span class="badge badge-error rounded-xl">支出</span>
+                      <% else %>
+                        <span class="badge badge-success rounded-xl">収入</span>
+                      <% end %>
+                    </td>
+                    <td><%= transaction.name.presence || "未入力" %></td>
+                    <td class="text-right font-bold">¥<%= number_with_delimiter(transaction.amount) %></td>
+                    <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
+                    <td>
+                      <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs rounded-xl", data: { turbo_confirm: "本当に削除しますか？" } %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
 
-        <%# 支出タブ %>
-        <label class="tab">
-          <input type="radio" name="transaction_tabs" />
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
+          <%# 支出タブ %>
+          <label class="tab">
+            <input type="radio" name="transaction_tabs" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 6.43l.776 2.898m0 0 3.182-5.511m-3.182 5.51-5.511-3.181" />
-            </svg>
-          支出
-        </label>
-        <div class="tab-content bg-base-100 border-base-300 p-6">
-          <table class="table table-zebra">
-            <thead>
-              <tr>
-                <th>名前</th>
-                <th class="text-right">金額</th>
-                <th>登録日</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @transactions.select(&:expense?).each do |transaction| %>
+              </svg>
+            支出
+          </label>
+          <div class="tab-content bg-base-100 border-base-300 p-6 rounded-box rounded-2xl">
+            <table class="table table-zebra">
+              <thead>
                 <tr>
-                  <td><%= transaction.name.presence || "未入力" %></td>
-                  <td class="text-right">¥<%= number_with_delimiter(transaction.amount) %></td>
-                  <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
-                  <td>
-                    <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs", data: { turbo_confirm: "本当に削除しますか？" } %>
-                  </td>
+                  <th>名前</th>
+                  <th class="text-right">金額</th>
+                  <th>登録日</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                <% @transactions.select(&:expense?).each do |transaction| %>
+                  <tr>
+                    <td><%= transaction.name.presence || "未入力" %></td>
+                    <td class="text-right font-bold text-error">¥<%= number_with_delimiter(transaction.amount) %></td>
+                    <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
+                    <td>
+                      <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs", data: { turbo_confirm: "本当に削除しますか？" } %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
 
-        <%# 収入タブ %>
-        <label class="tab">
-          <input type="radio" name="transaction_tabs" />
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
+          <%# 収入タブ %>
+          <label class="tab">
+            <input type="radio" name="transaction_tabs" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 me-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-            </svg>
-
-          収入
-        </label>
-        <div class="tab-content bg-base-100 border-base-300 p-6">
-          <table class="table table-zebra">
-            <thead>
-              <tr>
-                <th>名前</th>
-                <th class="text-right">金額</th>
-                <th>登録日</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @transactions.select(&:income?).each do |transaction| %>
+              </svg>
+            収入
+          </label>
+          <div class="tab-content bg-base-100 border-base-300 p-6 rounded-box rounded-2xl">
+            <table class="table table-zebra">
+              <thead>
                 <tr>
-                  <td><%= transaction.name.presence || "未入力" %></td>
-                  <td class="text-right">¥<%= number_with_delimiter(transaction.amount) %></td>
-                  <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
-                  <td>
-                    <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs", data: { turbo_confirm: "本当に削除しますか？" } %>
-                  </td>
+                  <th>名前</th>
+                  <th class="text-right">金額</th>
+                  <th>登録日</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <% @transactions.select(&:income?).each do |transaction| %>
+                  <tr>
+                    <td><%= transaction.name.presence || "未入力" %></td>
+                    <td class="text-right font-bold text-success">¥<%= number_with_delimiter(transaction.amount) %></td>
+                    <td><%= transaction.created_at.strftime("%Y/%m/%d") %></td>
+                    <td>
+                      <%= button_to "削除", transaction_path(transaction), method: :delete, class: "btn btn-error btn-xs", data: { turbo_confirm: "本当に削除しますか？" } %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
 
-      <%= link_to "ホームへ", home_path, class: "btn btn-outline w-full mt-4" %>
+      <div class="mt-6">
+        <%= link_to "ホームへ", home_path, class: "btn btn-outline w-full mt-4 rounded-2xl" %>
+      </div>
     </div>
+  </div>
+
+  <%# 各入力フォームへの導線 %>
+  <div class="grid grid-cols-3 gap-4 mt-6">
+    <a href="<%= incomes_path %>" class="btn btn-outline rounded-2xl">収入</a>
+    <a href="<%= future_expenses_path %>" class="btn btn-outline rounded-2xl">将来の支出</a>
+    <a href="<%= fixed_costs_path %>" class="btn btn-outline rounded-2xl">固定費</a>
   </div>
 </div>
