@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html data-theme="retro">
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
-    <meta property="og:title" content="いくら。| 転職中のお金管理アプリ">
-    <meta property="og:description" content="転職活動中のお金の不安を解消。収入・支出を登録するだけで今使える金額が自動算出されます。">
-    <meta property="og:image" content="<%= asset_url("ogp.png") %>">
-    <meta property="og:url" content="<%= request.url %>">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="いくら。">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="<%= asset_url("ogp.png") %>">
+    <title><%= content_for(:title) || "いくら。" %></title>
+    <%= display_meta_tags(default_meta_tags) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= yield :head %>
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">

@@ -25,6 +25,8 @@ gem "rails-i18n"
 gem "sentry-ruby"
 gem "sentry-rails"
 
+gem "meta-tags"
+
 group :test do
   gem "simplecov", require: false
 end
