@@ -6,7 +6,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :lockable
 
   def available_amount
     total_income - total_future_expenses - total_fixed_costs - total_transactions_expenses + total_transactions_incomes
