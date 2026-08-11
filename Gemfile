@@ -83,3 +83,5 @@ gem "wicked"
 
 gem "sidekiq"
 gem "sidekiq-scheduler"
+
+gem "pwned"

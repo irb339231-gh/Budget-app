@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :transactions, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
+  validates :password, pwned: true, if: :password_required?
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
