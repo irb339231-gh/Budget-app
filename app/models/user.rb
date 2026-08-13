@@ -8,7 +8,41 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :lockable
+         :lockable, :omniauthable,
+         omniauth_providers: [ :google_oauth2 ]
+
+  def self.from_omniauth(auth)
+    # Googleでメール認証が済んでいないアカウントは拒否
+    return nil if auth.provider == "google_oauth2" && !auth.info.email_verified
+    # emailが空なら拒否
+    return nil if auth.info.email.blank?
+
+    # (provider, uid)で既存ユーザーを検索
+    user = find_by(provider: auth.provider, uid: auth.uid)
+    return user if user
+
+    # 同じメアドの別ユーザーがいたら拒否
+    return nil if User.exists?(email: auth.info.email)
+
+    # 初回ログイン → 新規作成
+    create do |u|
+      u.provider = auth.provider
+      u.uid      = auth.uid
+      u.email    = auth.info.email
+      u.name     = auth.info.name
+      u.password = SecureRandom.hex(16)
+    end
+  end
+
+  # OAuthユーザーにはパスワード入力を要求しない
+  def password_required?
+    super && provider.blank?
+  end
+
+  def password_changeable?
+    provider.blank?
+  end
+
 
   def available_amount
     total_income - total_future_expenses - total_fixed_costs - total_transactions_expenses + total_transactions_incomes
