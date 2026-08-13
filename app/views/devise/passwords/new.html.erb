@@ -18,7 +18,14 @@
           </div>
         <% end %>
         
-        <%= render "devise/shared/links" %>
+          <div class="text-center mt-6 space-y-2 text-sm">
+            <div>
+              <%= link_to "ログイン", new_session_path(resource_name), class: "link link-hover text-primary font-bold" %>
+            </div>
+            <div>
+              <%= link_to "新規登録", new_registration_path(resource_name), class: "link link-hover text-base-content/70" %>
+            </div>
+        </div>
       </div>
     </div>
   </div>

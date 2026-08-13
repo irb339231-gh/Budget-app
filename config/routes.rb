@@ -1,7 +1,10 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   root to: 'pages#top'
   get 'pages/top'
   get "users/profile", to: "users#show", as: :user_profile
