@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Wizards", type: :request do
-  let(:user) { create(:user)}
+  let(:user) { create(:user) }
 
   before do
     sign_in user
@@ -16,7 +16,7 @@ RSpec.describe "Wizards", type: :request do
     end
 
     context "未ログインの場合" do
-      before { sign_out user}
+      before { sign_out user }
       it "ログイン画面にリダイレクトされる" do
         get wizard_path(:step1)
         expect(response).to redirect_to new_user_session_path
@@ -52,9 +52,8 @@ RSpec.describe "Wizards", type: :request do
           job_search_start_month: "2026-07-01",
           job_search_end_month: "2026-10-01"
         }
-      } 
+      }
       expect(response).to redirect_to wizard_path(:step2)
-      
     end
   end
 
@@ -107,9 +106,3 @@ RSpec.describe "Wizards", type: :request do
     end
   end
 end
-
-
-        
-
-
-

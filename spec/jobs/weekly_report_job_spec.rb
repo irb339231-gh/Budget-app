@@ -17,7 +17,7 @@ RSpec.describe WeeklyReportJob, type: :job do
         WeeklyReportJob.perform_now
       }.not_to change { ActionMailer::Base.deliveries.count }
     end
-    
+
     it "複数のユーザーにメールを送信する" do
       create(:user, email_notification: true)
       expect {
