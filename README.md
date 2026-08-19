@@ -3,16 +3,71 @@
 
 ![OGP画像](app/assets/images/ogp.png)
 
-### 転職活動中のお金の不安を解消するアプリ
 **【ゲストユーザーアカウント情報】**
 
 - Email : guest@example.com
 - Password : iWNB8bWVeXux2Sa
 
+### 転職活動中のお金の不安を解消するアプリ
 ## 1. サービス概要
 収入・固定費・将来の支出を一度登録するだけで「今日・今週・今月・総じていくら使えるか」が自動で算出されるアプリ。
 既存の家計簿アプリが「いくら支出したか」にフォーカスしているのに対し、「いくら。」は「今いくら使えるか」に焦点を当てている。
 外食や買い物をする際に「これを買っても大丈夫かな」と不安を感じた時にアプリを開くだけで、今使えるお金がすぐに確認でき安心して支出の判断ができる。
+
+## 主要な機能
+
+- ウィザード形式の初期設定 
+- ホーム画面（今使える金額の表示）
+- 収入一覧画面（追加・編集・削除）
+- 随時支出・収入画面
+
+### ウィザード形式の初期設定
+
+| Step1：転職活動期間 | Step2~4：収入・支出・固定費の入力 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/f62777fb868cde0c30a1b64a82e14b05.gif)](https://gyazo.com/f62777fb868cde0c30a1b64a82e14b05)| [![Image from Gyazo](https://i.gyazo.com/59aafa15bdef943e701a7b07ee5c0864.gif)](https://gyazo.com/59aafa15bdef943e701a7b07ee5c0864)|
+| <p align="left">転職活動の開始月・終了予定月を設定する</p> | <p align="left">貯蓄などの収入、将来発生する引っ越しなどの将来支出、携帯代などの固定費を登録する</p> |
+
+初回ログイン時にウィザード形式で初期設定を行います。
+収入・将来支出・固定費を登録するだけで、今使える金額が自動算出されます。
+
+---
+
+### 今使える金額の算出
+
+| ホーム画面 | 内訳 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/e716c9796cd0732922a35b89e45dd114.gif)](https://gyazo.com/e716c9796cd0732922a35b89e45dd114) |[![Image from Gyazo](https://i.gyazo.com/fc03a6d4e6f9ea32be3ae8e03b2656e6.gif)](https://gyazo.com/fc03a6d4e6f9ea32be3ae8e03b2656e6)|
+| <p align="left">今使える金額・日毎・週毎・月毎の使える金額を表示。残高の割合によって背景色が変化する</p> | <p align="left">収入・将来支出・固定費・随時支出の内訳を表示</p> |
+
+---
+### 収入画面
+
+| 収入一覧 | 収入追加 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/458cd020f3b2052fd3ca12383f157d7f.gif)](https://gyazo.com/458cd020f3b2052fd3ca12383f157d7f)| [![Image from Gyazo](https://i.gyazo.com/76ac39aefd911b2b757bd50fda1559d7.gif)](https://gyazo.com/76ac39aefd911b2b757bd50fda1559d7)> |
+| <p align="left">登録した収入の一覧を表示する</p> | <p align="left">貯蓄・退職金などの収入を追加できる</p> |
+
+| 収入編集 | 収入削除 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/6a0c9d85248d9abdbe4d4d4718c96b35.gif)](https://gyazo.com/6a0c9d85248d9abdbe4d4d4718c96b35)| [![Image from Gyazo](https://i.gyazo.com/9f56444b25cbbcc4d90cb7761c339177.gif)](https://gyazo.com/9f56444b25cbbcc4d90cb7761c339177)|
+| <p align="left">登録した収入の名前・金額を編集できる</p> | <p align="left">登録した収入を削除できる</p> |
+
+### 随時支出・収入画面
+
+| 随時支出・収入 | 履歴 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/767f01fa0a7f49660b5349164a4c2a61.gif)](https://gyazo.com/767f01fa0a7f49660b5349164a4c2a61) | [![Image from Gyazo](https://i.gyazo.com/de7f1c555ffbbc943c5c63faad5d7fda.gif)](https://gyazo.com/de7f1c555ffbbc943c5c63faad5d7fda) |
+| <p align="left">随時支出・収入をホーム画面から入力できる</p> | <p align="left">随時支出・収入の履歴を確認・削除できる</p> |
+
+### セキュリティ・メール通知
+
+| ログイン | 通知 |
+| :---: | :---: |
+| [![Image from Gyazo](https://i.gyazo.com/8e97a0eb964c50ed8105432449fa3db9.gif)](https://gyazo.com/8e97a0eb964c50ed8105432449fa3db9)| [![Image from Gyazo](https://i.gyazo.com/4060db0830381813da236a322d4b75a0.gif)](https://gyazo.com/4060db0830381813da236a322d4b75a0)|
+| <p align="left">メール認証・Googleログインに対応。5回ログイン失敗でアカウントをロック</p> | <p align="left">メール通知のON/OFFを設定できる</p> |
+
+---
 
 
 ## 2. このアイデアはどこから生まれたか
@@ -257,7 +312,7 @@ RailsのGemとして簡単に導入でき、ログイン・パスワードリセ
 Figma：<https://www.figma.com/design/Tvcx2Hl0XveW8mdiGqiFrA/%E7%84%A1%E9%A1%8C?node-id=11-1577&t=UcW3zQ6TwsU4Kdv7-0>
 
 ## 12. ER図
-dbdiagram.io：https://gyazo.com/7653cf237d58360eeb0480f52b93da30
+dbdiagram.io：[![Image from Gyazo](https://i.gyazo.com/7653cf237d58360eeb0480f52b93da30.png)](https://gyazo.com/7653cf237d58360eeb0480f52b93da30)
 
 ## 13. コミットメッセージのルール
 ### typeの種類
