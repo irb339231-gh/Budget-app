@@ -1,4 +1,14 @@
 <div class="container mx-auto px-4 py-8 max-w-lg">
+  <div class="rounded-3xl p-6 mb-6 text-white"
+       style="background: linear-gradient(135deg, #f97316, #ea580c);">
+    <p class="text-sm opacity-80 mb-1">Step 3 / 4</p>
+    <p class="text-2xl font-bold">将来の支出の入力</p>
+    <p class="text-sm opacity-80 mt-1">引越し料金・祝儀などを入力してください</p>
+    <% if @future_expenses.any? %>
+      <p class="text-sm opacity-80 mt-1">合計：¥<%= number_with_delimiter(@future_expenses.sum(:amount)) %></p>
+    <% end %>
+  </div>
+
   <ul class="steps w-full mb-8">
     <li class="step step-primary">
       <%= link_to "転職期間", wizard_path(:step1) %>
@@ -14,60 +24,47 @@
     </li>
   </ul>
 
-  <div class="card bg-base-100 shadow-xl">
-    <div class="card-body">
-      <h2 class="card-title">Step3：将来支出の入力</h2>
-      <p class="text-gray-500 mb-4">引越し料金・祝儀などを入力してください</p>
-
-          <% if @future_expenses.any? %>
-            <div class="overflow-x-auto mb-4">
-              <table class="table table-zebra">
-                <thead>
-                  <tr>
-                    <th>支出名</th>
-                    <th class="text-right">金額</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @future_expenses.each do |future_expense| %>
-                    <tr>
-                      <td><%= future_expense.name %></td>
-                      <td class="text-right"><%= number_with_delimiter(future_expense.amount) %></td>
-                      <td>
-                        <%= button_to "削除", future_expense_path(future_expense), method: :delete,
-                        class: "btn btn-error btn-xs",
-                        data: { turbo_confirm: "本当に削除しますか？" } %>
-                      </td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
+  <% if @future_expenses.any? %>
+    <div class="card bg-base-200 shadow-xl mb-4">
+      <div class="card-body">
+        <div class="space-y-3">
+          <% @future_expenses.each do |future_expense| %>
+            <div class="flex justify-between items-center p-3 bg-base-100 rounded-2xl">
+              <span class="font-bold"><%= future_expense.name %></span>
+              <div class="flex items-center gap-2">
+                <span class="text-error font-bold">¥<%= number_with_delimiter(future_expense.amount) %></span>
+                <%= button_to "削除", future_expense_path(future_expense), method: :delete,
+                    class: "btn btn-error btn-xs rounded-xl",
+                    data: { turbo_confirm: "本当に削除しますか？" } %>
+              </div>
             </div>
-            <p class="text-right font-bold mb-4">
-              合計:¥<%= number_with_delimiter(@future_expenses.sum(:amount)) %>
-            </p>
           <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
+  <div class="card bg-base-200 shadow-xl">
+    <div class="card-body">
       <%= form_with url: wizard_path(step), method: :patch do |f| %>
         <div class="form-control mb-4">
-          <%= f.label :name, "支出名", class: "label" %>
-          <%= f.text_field :name, class: "input input-bordered w-full",
+          <%= f.label :name, "支出名", class: "label font-bold" %>
+          <%= f.text_field :name, class: "input input-bordered w-full rounded-2xl",
               placeholder: "例：引越し料金・祝儀", name: "future_expense[name]" %>
         </div>
 
         <div class="form-control mb-6">
-          <%= f.label :amount, "金額", class: "label" %>
-          <%= f.number_field :amount, class: "input input-bordered w-full",
+          <%= f.label :amount, "金額", class: "label font-bold" %>
+          <%= f.number_field :amount, class: "input input-bordered w-full rounded-2xl",
               placeholder: "例：1000000", name: "future_expense[amount]" %>
         </div>
 
-        <%= f.submit "追加する", class: "btn btn-outline w-full mb-4" %>
+        <%= f.submit "追加する", class: "btn btn-outline w-full mb-4 rounded-2xl" %>
       <% end %>
 
         <div class="grid grid-cols-2 gap-4">
-          <%= link_to "戻る", wizard_path(:step2), class: "btn btn-primary w-full" %>
-          <%= link_to "次へ", next_wizard_path, class: "btn btn-primary w-full" %>
+          <%= link_to "戻る", wizard_path(:step2), class: "btn btn-primary w-full rounded-2xl" %>
+          <%= link_to "次へ", next_wizard_path, class: "btn btn-primary w-full rounded-2xl" %>
         </div>
     </div>
   </div>
