@@ -1,37 +1,57 @@
 <div class="min-h-screen flex items-center justify-center bg-base-200">
-  <div class="card w-96 bg-base-100 shadow-xl">
-    <div class="card-body">
-      <h2 class="card-title justify-center text-2xl mb-4">ログイン</h2>
-
-      <%= form_with model: resource, as: resource_name, url: session_path(resource_name) do |f| %>
-
-        <div class="form-control mb-3">
-          <%= f.label :email, "メールアドレス", class: "label" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",
-              class: "input input-bordered w-full" %>
-        </div>
-
-        <div class="form-control mb-6">
-          <%= f.label :password, "パスワード", class: "label" %>
-          <%= f.password_field :password, autocomplete: "current-password",
-              class: "input input-bordered w-full" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
+  <div class="w-full max-w-md px-4">
+    <%# フォーム %>
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="text-xl font-bold text-center mb-4">ログイン</h2>
+        <%= form_with model: resource, as: resource_name, url: session_path(resource_name) do |f| %>
           <div class="form-control mb-3">
-            <label class="cursor-pointer label">
-              <%= f.check_box :remember_me, class: "checkbox checkbox-primary" %>
-              <span class="label-text">ログイン状態を保持する</span>
-            </label>
+            <%= f.label :email, "メールアドレス", class: "label font-bold" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                class: "input input-bordered w-full rounded-2xl" %>
           </div>
-        <% end %>
 
-        <div class="form-control">
-          <%= f.submit "ログイン", class: "btn btn-primary w-full" %>
-        </div>
-      <% end %>
+          <div class="form-control mb-6">
+            <%= f.label :password, "パスワード", class: "label font-bold" %>
+            <%= f.password_field :password, autocomplete: "current-password",
+                class: "input input-bordered w-full rounded-2xl" %>
+          </div>
 
-      <%= render "devise/shared/links" %>
+          <% if devise_mapping.rememberable? %>
+            <div class="form-control mb-3">
+              <label class="cursor-pointer label">
+                <%= f.check_box :remember_me, class: "checkbox checkbox-primary" %>
+                <span class="label-text">ログイン状態を保持する</span>
+              </label>
+            </div>
+          <% end %>
+          
+          <div class="form-control">
+            <%= f.submit "ログイン", class: "btn btn-primary w-full rounded-2xl" %>
+          </div>
+         <% end %>
+          <div class="divider">または</div>
+          <form action="<%= user_google_oauth2_omniauth_authorize_path %>" method="post" data-turbo="false">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <button type="submit" class="btn btn-outline w-full rounded-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5 mr-2">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+              Googleでログイン
+            </button>
+          </form>
+         <div class="text-center mt-4 space-y-2 text-sm">
+          <div>
+            <%= link_to "新規登録", new_registration_path(resource_name), class: "link link-hover text-primary font-bold" %>
+          </div>
+          <div>
+            <%= link_to "パスワードを忘れた場合", new_password_path(resource_name), class: "link link-hover text-base-content/70" %>
+          </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>

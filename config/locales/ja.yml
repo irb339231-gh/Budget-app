@@ -12,6 +12,8 @@ ja:
         too_short: "は%{count}文字以上で入力してください"
         invalid: "は不正な値です"
         taken: "はすでに使用されています"
+        not_pwned: "は過去に漏洩したパスワードです。別のパスワードを設定してください。"
+        pwned_error: "は現在確認できません。別のパスワードを設定してください。"
     attributes:
       user:
         name: "ニックネーム"
@@ -51,6 +53,10 @@ ja:
       already_authenticated: "すでにログインしています。"
       unauthenticated: "ログインしてください。"
       unconfirmed: "メールアドレスの確認が完了していません。"
-      locked: "アカウントがロックされています。"
+      locked: "アカウントがロックされています。しばらく時間を置いてから再度お試しください。"
+      last_attempt: "もう一度失敗するとアカウントがロックされます。"
       timeout: "セッションがタイムアウトしました。再度ログインしてください。"
       inactive: "アカウントが無効です。"
+    omniauth_callbacks:
+      success: "%{kind}アカウントでログインしました。"
+      failure: "%{kind}アカウントでのログインに失敗しました。"

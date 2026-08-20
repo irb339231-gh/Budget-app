@@ -1,5 +1,10 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   root to: 'pages#top'
   get 'pages/top'
   get "users/profile", to: "users#show", as: :user_profile
@@ -29,10 +34,12 @@ Rails.application.routes.draw do
   patch "home/update_job_search", to: "users#update_job_search", as: :update_job_search
   # Defines the root path route ("/")
   # root "posts#index"
+  patch "users/update_email_notification", to: "users#update_email_notification", as: :update_email_notification
 
   resources :wizard, only: [ :show, :update ]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    mount Sidekiq::Web => "/sidekiq"
   end
 end

@@ -1,2 +1,8 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+    themes: retro --default;
+}
+
+[data-theme="retro"] {
+  --color-primary: oklch(70.6% 0.17423 48.027);
+}

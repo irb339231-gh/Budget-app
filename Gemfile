@@ -25,6 +25,8 @@ gem "rails-i18n"
 gem "sentry-ruby"
 gem "sentry-rails"
 
+gem "meta-tags"
+
 group :test do
   gem "simplecov", require: false
 end
@@ -57,6 +59,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -78,3 +82,11 @@ end
 gem "devise", "~> 5.0"
 
 gem "wicked"
+
+gem "sidekiq"
+gem "sidekiq-scheduler"
+
+gem "pwned"
+
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"

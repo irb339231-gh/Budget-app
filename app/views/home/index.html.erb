@@ -1,111 +1,153 @@
 <div class="container mx-auto px-4 py-8">
 
+<%# 色の決定　%>
+<% bg_color = if @available_amount_percentage >= 70
+                "bg-success"
+              elsif @available_amount_percentage >= 40
+                "bg-warning"
+              else
+                "bg-error"
+              end
+%>
+
   <%# 今使える金額の表示 %>
-<div class="tabs tabs-lift">
-  <label class="tab">
+<div class="tabs tabs-lift mb-6">
+  <label class="tab font_bald">
     <input type="radio" name="my_tabs_4" checked="checked"/>
     All
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
-    <p class="text-lg">あなたの今使える金額は</p>
-    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@available_amount) %></p>
+  <div class="tab-content <%= bg_color %> border-base-300 p-8 rounded-box rounded-2xl">
+    <div class="text-center">
+      <p class="text-sm text-base-100 opacity-70 mb-2">あなたのいくら。</p>
+      <p class="text-6xl text-base-100 font-bold tracking-tight">¥<%= number_with_delimiter(@available_amount) %></p>
+      <div class="mt-4">
+        <progress class="progress progress-primary w-full" value="<%= @available_amount_percentage %>" max="100"></progress>
+        <p class="text-sm text-base-100 opacity-70 mt-1">収入に対する残高<%= @available_amount_percentage %>%</p>
+      </div>
+    </div>
   </div>
-  <label class="tab">
+  <label class="tab font_bald">
     <input type="radio" name="my_tabs_4" />
     daily
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
-    <p class="text-lg">１日あたり</p>
-    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@daily_available_amount) %></p>
+  <div class="tab-content <%= bg_color %> border-base-300 p-8 rounded-box rounded-2xl">
+    <div class="text-center">
+      <p class="text-sm text-base-100 opacity-70 mb-2">１日あたりのいくら。</p>
+      <p class="text-6xl text-base-100 font-bold">¥<%= number_with_delimiter(@daily_available_amount) %></p>
+    </div>      
   </div>
-  <label class="tab">
+  <label class="tab font_bald">
     <input type="radio" name="my_tabs_4" />
     weekly
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
-    <p class="text-lg">１週間あたり</p>
-    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@weekly_available_amount) %></p>
+  <div class="tab-content <%= bg_color %> border-base-300 p-8 rounded-box rounded-2xl">
+    <div class="text-center">
+      <p class="text-sm text-base-100 opacity-70 mb-2">１週間あたりのいくら。</p>
+      <p class="text-6xl text-base-100 font-bold">¥<%= number_with_delimiter(@weekly_available_amount) %></p>
+    </div>
   </div>
-  <label class="tab">
+  <label class="tab font_bald">
     <input type="radio" name="my_tabs_4" />
     monthly
   </label>
-  <div class="tab-content bg-purple-600 border-base-300 p-6">
-    <p class="text-lg">１月あたり</p>
-    <p class="text-5xl font-bold">¥<%= number_with_delimiter(@monthly_available_amount) %></p>
+  <div class="tab-content <%= bg_color %> border-base-300 p-8 rounded-box rounded-2xl">
+    <div class="text-center">
+      <p class="text-sm text-base-100 opacity-70 mb-2">1か月あたりのいくら。</p>
+      <p class="text-6xl text-base-100 font-bold">¥<%= number_with_delimiter(@monthly_available_amount) %></p>
+    </div>
   </div>
 </div>
 
   
 <%# 転職活動期間 %>
-<div class="card bg-neutral shadow-md mb-6">
+<div class="card bg-base-200 shadow-md mb-6">
   <div class="card-body">
-    <h2 class="card-title">転職活動期間</h2>
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="card-title">
+        転職活動期間
+      </h2>
+      <% if current_user.job_search_start_month && current_user.job_search_end_month %>
+        <div class="badge badge-primary badge-lg rounded-2xl">
+          <%= current_user.job_search_months %>ヶ月
+        </div>
+      <% end %>
+    </div>
+
     <%= form_with model: current_user, url: update_job_search_path, method: :patch do |f| %>
-      <div class="flex gap-4 items-center">
+      <div class="grid grid-cols-2 gap-4">
         <div class="form-control">
-          <label class="label">
-            <span class="label-text">開始日</span>
-          </label>
+          <%= f.label :job_search_start_month, "開始日", class: "label label-text font-bold" %>
           <%= f.date_field :job_search_start_month,
-              class: "input input-bordered",
+              class: "input input-bordered w-full rounded-2xl",
               value: current_user.job_search_start_month %>
         </div>
-        <span class="mt-6">〜</span>
         <div class="form-control">
-          <label class="label">
-            <span class="label-text">終了日</span>
-          </label>
+          <%= f.label :job_search_end_month, "終了日", class: "label label-text font-bold" %>
           <%= f.date_field :job_search_end_month,
-              class: "input input-bordered",
+              class: "input input-bordered w-full rounded-2xl",
               value: current_user.job_search_end_month %>
         </div>
       </div>
       <div class="mt-4">
-        <%= f.submit "設定する", class: "btn btn-primary btn-sm" %>
+        <%= f.submit "設定する", class: "btn btn-primary btn-sm w-full rounded-2xl" %>
       </div>
     <% end %>
   </div>
 </div>
 
   <%# 内訳表示 %>
-  <div class="card bg-neutral shadow-md mb-6">
+  <div class="card bg-base-200 shadow-md mb-6">
     <div class="card-body">
-      <h2 class="card-title">内訳</h2>
-      <div class="overflow-x-auto">
-        <table class="table table-zebra">
-          <tbody>
-            <tr>
-              <td>収入</td>
-              <td class="text-right">¥<%= number_with_delimiter(current_user.total_income) %></td>
-            </tr>
-            <tr>
-              <td>将来の支出</td>
-              <td class="text-right">¥<%= number_with_delimiter(current_user.total_future_expenses) %></td>
-            </tr>
-            <tr>
-              <td>固定費</td>
-              <td class="text-right">¥<%= number_with_delimiter(current_user.total_fixed_costs) %></td>
-            </tr>
-            <tr>
-              <td>随時支出</td>
-              <td class="text-right">¥<%= number_with_delimiter(current_user.total_transactions_expenses) %></td>
-            </tr>
-            <tr>
-              <td>随時収入</td>
-              <td class="text-right">¥<%= number_with_delimiter(current_user.total_transactions_incomes) %></td>
-            </tr>
-          </tbody>
-        </table>
+      <h2 class="card-title mb-4">内訳</h2>
+      <div class="space-y-3">
+        <%# 収入 %>
+        <%= link_to incomes_path, class: "flex justify-between items-center p-3 bg-base-100 bg-opacity-10 rounded-2xl hover:opacity-80 transition-opacity hover:bg-base-300" do %>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base-500">収入</span>
+          </div>
+          <span class="font-bold text-success">+¥<%= number_with_delimiter(current_user.total_income) %></span>
+        <% end %>
+
+        <%# 将来の支出 %>
+        <%= link_to future_expenses_path, class: "flex justify-between items-center p-3 bg-base-100 bg-opacity-10 rounded-2xl hover:opacity-80 transition-opacity hover:bg-base-300" do %>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base-500">将来の支出</span>
+          </div>
+          <span class="font-bold text-error">-¥<%= number_with_delimiter(current_user.total_future_expenses) %></span>
+        <% end % %>
+
+        <%# 固定費 %>
+        <%= link_to fixed_costs_path, class: "flex justify-between items-center p-3 bg-base-100 bg-opacity-10 rounded-2xl hover:opacity-80 transition-opacity hover:bg-base-300" do %>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base-500">固定費</span>
+          </div>
+          <span class="font-bold text-error">-¥<%= number_with_delimiter(current_user.total_fixed_costs) %></span>
+        <% end %>
+
+        <%# 随時支出 %>
+        <%= link_to transactions_path, class: "flex justify-between items-center p-3 bg-base-100 bg-opacity-10 rounded-2xl hover:opacity-80 transition-opacity hover:bg-base-300" do %>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base-500">随時支出</span>
+          </div>
+          <span class="font-bold text-error">-¥<%= number_with_delimiter(current_user.total_transactions_expenses) %></span>
+        <% end %>
+
+        <%# 随時収入 %>
+        <%= link_to transactions_path, class: "flex justify-between items-center p-3 bg-base-100 bg-opacity-10 rounded-2xl hover:opacity-80 transition-opacity hover:bg-base-300" do %>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base-500">随時収入</span>
+          </div>
+          <span class="font-bold text-success">+¥<%= number_with_delimiter(current_user.total_transactions_incomes) %></span>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <%# 随時支出・収入の入力欄 %>
-  <div class="card bg-neutral shadow-md mb-6">
+<%# 随時支出・収入の入力欄 %>
+  <div class="card bg-base-200 shadow-md mb-6">
     <div class="card-body">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="card-title">随時支出・収入</h2>
+        <h2 class="card-title">随時支出・収入を入力してください。</h2>
         <%= link_to "履歴を見る", transactions_path, class: "btn btn-outline btn-sm" %>
       </div>
       <div class="grid grid-cols-2 gap-4">
@@ -113,36 +155,41 @@
         <%# 随時支出フォーム %>
         <%= form_with url: transactions_path, method: :post, scope: :transaction do |f| %>
           <%= f.hidden_field :category, value: :expense %>
-          <div class="form-control">
+          <div class="form-control bg-base-100 bg-opacity-10 p-4 rounded-2xl">
             <label class="label">
-              <span class="label-text">随時支出</span>
-          </label>
-          <%= f.text_field :name, placeholder: "支出の名前(任意)", class: "input input-bordered w-full mb-2" %>
-          <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
-          <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
-        </div>
+              <span class="label-text font-bold text-error">随時支出</span>
+            </label>
+            <%= f.text_field :name, placeholder: "支出の名前（任意）",
+                class: "input input-bordered w-full mb-2 rounded-2xl" %>
+            <%= f.number_field :amount, placeholder: "¥0",
+                class: "input input-bordered w-full rounded-2xl" %>
+            <%= f.submit "登録", class: "btn btn-error btn-sm text-base-100 mt-2 w-full rounded-2xl" %>
+          </div>
         <% end %>
 
         <%# 随時収入フォーム %>
         <%= form_with url: transactions_path, method: :post, scope: :transaction do |f| %>
           <%= f.hidden_field :category, value: :income %>
-          <div class="form-control">
+          <div class="form-control bg-base-100 bg-opacity-10 p-4 rounded-2xl">
             <label class="label">
-              <span class="label-text">随時収入</span>
+              <span class="label-text font-bold text-success">随時収入</span>
             </label>
-            <%= f.text_field :name, placeholder: "収入の名前(任意)", class: "input input-bordered w-full mb-2" %>
-            <%= f.number_field :amount, placeholder: "¥0", class: "input input-bordered w-full" %>
-            <%= f.submit "登録", class: "btn btn-primary btn-sm mt-2" %>
+            <%= f.text_field :name, placeholder: "収入の名前（任意）",
+                class: "input input-bordered w-full mb-2 rounded-2xl" %>
+            <%= f.number_field :amount, placeholder: "¥0",
+                class: "input input-bordered w-full rounded-2xl" %>
+            <%= f.submit "登録", class: "btn btn-success btn-sm text-base-100 mt-2 w-full rounded-2xl" %>
           </div>
         <% end %>
+
       </div>
     </div>
   </div>
 
   <%# 各入力フォームへの導線 %>
   <div class="grid grid-cols-3 gap-4">
-    <a href="<%= incomes_path %>" class="btn btn-outline">収入</a>
-    <a href="<%= future_expenses_path %>" class="btn btn-outline">将来の支出</a>
-    <a href="<%= fixed_costs_path %>" class="btn btn-outline">固定費</a>
+    <a href="<%= incomes_path %>" class="btn btn-outline rounded-2xl">収入</a>
+    <a href="<%= future_expenses_path %>" class="btn btn-outline rounded-2xl">将来の支出</a>
+    <a href="<%= fixed_costs_path %>" class="btn btn-outline rounded-2xl">固定費</a>
   </div>
 </div>
