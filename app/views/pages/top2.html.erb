@@ -1,0 +1,29 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "top2", "data-turbo-track": "reload" %>
+<% end %>
+
+<!-- ヘッダー及びフッターは後にapplication.htmlに移動-->
+<header class="top-header">
+    <div class="top-logo">
+        <%= link_to "いくら。", root_path %>
+    </div>
+    <nav class="top-nav">
+        <%= link_to "Home", "#home" %>
+        <%= link_to "About", "#about" %>
+        <%= link_to "使い方", "#how-to-use" %>
+    </nav>
+    <button class="menu-button" id="menu-button">
+        <span></span>
+        <span></span>
+        <small>MENU</small>
+    </button>
+</header>
+
+<section class="hero-section" id="home">
+    <div class="hero-image">
+        <div class="hero-decoration"></div>
+    </div>
+    <p class="hero-en">
+        MONEY MANAGEMENT
+    </p>
+</section>
