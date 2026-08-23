@@ -2,6 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body {
   margin: 0;
   background: #f7f5ef;
@@ -33,8 +44,6 @@ a {
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-  mix-blend-mode: difference;
-  color: white;
 }
 
 .top-logo {
@@ -43,26 +52,224 @@ a {
   letter-spacing: 0.08em;
 }
 
-.top-nav {
+.menu-button {
+  width: 30px;
+  height: 30px;
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.top-nav a {
-  position: relative;
-}
-
-.top-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
+.menu-button span {
+  width: 25px;
   height: 1px;
-  background: currentColor;
+  background: #222;
+}
+/* ヒーロー */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f5ef;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo-main {
+  font-family: Georgia, serif;
+  font-size: clamp(70px, 12vw, 140px);
+  font-weight: normal;
+  letter-spacing: 0.15em;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.hero-button {
+  padding: 16px 35px;
+  font-size : 14px;
+  letter-spacing: 0.08em;
   transition: 0.3s;
 }
 
-.top-nav a:hover::after {
-  width: 100%;
+.hero-button-primary {
+  background: #222;
+  color: white;
 }
+
+.hero-button-primary:hover {
+  background: #555;
+}
+
+.hero-button-secondary {
+  border: 1px solid #222;
+}
+
+.hero-button-secondary:hover {
+  background: #222;
+  color: white;
+}
+
+
+
+/* about */
+.about-section {
+  padding: 140px 20;
+}
+
+
+.about-container {
+  width: min(900px, 90%);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-introduction {
+  padding: 50px 0;
+  border-top: 1px solid #222;
+}
+
+.about-introduction h3 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 30px;
+}
+
+.about-introduction p {
+  font-size: 17px;
+  line-height: 2.0;
+  margin: 0 0 10px;
+}
+
+.about-description {
+  margin: 40px 0;
+}
+
+.about-description p {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 2.0;
+  margin: 0 0 20px;
+}
+
+.about-message {
+  padding-top: 50px;
+  border-top: 1px solid #222;
+}
+
+.about-message p {
+  font-size: 17px;
+  line-height: 2.2;
+  margin: 0 0 30px;
+}
+
+
+
+/* problem */
+.problem-section {
+  padding: 140px 20px;
+  background: #ebe7dd;
+}
+
+.problem-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.problem-lead {
+  margin-bottom: 80px;
+}
+
+.problem-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 50px 0;
+  border-top: 1px solid #222;
+}
+
+.problem-item span {
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.problem-item h3 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 30px 0;
+}
+
+.problem-item p {
+  font-size: 15px;
+  line-height: 2;
+  margin: 0;
+}
+
+/* how-to-use */
+.how-to-section {
+  padding: 140px 20px;
+}
+
+.how-to-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.how-to-lead {
+  margin-bottom: 80px;
+  font-size: 17px;
+}
+
+.how-to-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 50px 0;
+  border-top: 1px solid #222;
+}
+
+.how-to-item span {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.how-to-item h3 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 30px 0;
+}
+
+.how-to-item p {
+  font-size: 15px;
+  line-height: 2;
+  margin: 0;
+}
+
+
+
+
+
