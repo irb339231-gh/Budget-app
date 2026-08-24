@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
   root to: 'pages#top'
   get 'pages/top'
-  get 'pages/top2' #実験用なので終わったら削除
+  get 'pages/top2' # 実験用なので終わったら削除
   get "users/profile", to: "users#show", as: :user_profile
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
