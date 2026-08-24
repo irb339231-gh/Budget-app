@@ -1,4 +1,11 @@
 <div class="container mx-auto px-4 py-8 max-w-lg">
+  <div class="rounded-3xl p-6 mb-6 text-white"
+       style="background: linear-gradient(135deg, #f97316, #ea580c);">
+    <p class="text-sm opacity-80 mb-1">Step 1 / 4</p>
+    <p class="text-2xl font-bold">転職活動期間の設定</p>
+    <p class="text-sm opacity-80 mt-1">転職活動の開始月と終了予定月を設定してください</p>
+  </div>
+
   <ul class="steps w-full mb-8">
     <li class="step step-primary">
       <%= link_to "転職期間", wizard_path(:step1) %>
@@ -14,23 +21,23 @@
     </li>
   </ul>
 
-  <div class="card bg-base-100 shadow-xl">
+  <div class="card bg-base-200 shadow-xl">
     <div class="card-body">
-      <h2 class="card-title">Step1：転職活動期間の設定</h2>
 
       <%= form_with model: @user, url: wizard_path(step), method: :patch do |f| %>
         <div class="form-control mb-4">
           <%= f.label :job_search_start_month, "開始月", class: "label" %>
-          <%= f.date_field :job_search_start_month, class: "input input-bordered w-full" %>
+          <%= f.date_field :job_search_start_month, class: "input input-bordered w-full rounded-2xl" %>
         </div>
 
         <div class="form-control mb-6">
           <%= f.label :job_search_end_month, "終了予定月", class: "label" %>
-          <%= f.date_field :job_search_end_month, class: "input input-bordered w-full" %>
+          <%= f.date_field :job_search_end_month, class: "input input-bordered w-full rounded-2xl" %>
         </div>
 
-        <div class="grid grid-cols-1gap-4">
-          <%= f.submit "次へ", class: "btn btn-primary w-full" %>
+        <div class="grid grid-cols-2 gap-4">
+          <%= link_to "スキップ", wizard_path(:step2), class: "btn btn-outline rounded-2xl" %>
+          <%= f.submit "次へ", class: "btn btn-primary w-full rounded-2xl" %>
         </div>
       <% end %>
     </div>
