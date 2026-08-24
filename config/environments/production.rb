@@ -105,15 +105,15 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: ENV["RENDER_EXTERNAL_URL"] }
 
-  config.action_mailer.default_url_options = { host: ENV["RENDER_EXTERNAL_URL"]} 
+  config.action_mailer.default_url_options = { host: ENV["RENDER_EXTERNAL_URL"] }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     port: 587,
     domain: ENV["RENDER_EXTERNAL_URL"],
     address: "smtp.gmail.com",
-    user_name: ENV["GMAIL_USERNAME"] ,
-    password: ENV["GMAIL_PASSWORD"] ,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
     authentication: :plain,
     enable_starttls_auto: true
   }
