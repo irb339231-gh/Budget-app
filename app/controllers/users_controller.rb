@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if current_user.update(job_search_params)
       redirect_to home_path, notice: "転職活動期間を設定しました"
     else
-      redirect_to home_path, alert: "設定に失敗しました"
+      redirect_to home_path, alert: current_user.errors.full_messages.join(", ")
     end
   end
 
