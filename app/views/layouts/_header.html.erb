@@ -1,0 +1,25 @@
+<header class="top-header">
+    <div class="top-logo">
+        <% if user_signed_in? %>
+            <%= link_to "いくら。", home_path %>
+        <% else  %>
+            <%= link_to "いくら。", root_path %>
+        <% end %>
+    </div>
+    <button class="menu-button" id="menu-button" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<nav class="site-menu" id="site-menu">
+    <% if user_signed_in? %>
+        <%= link_to "Home", home_path %>
+    <% else %>
+        <%= link_to "Home", root_path %>
+    <% end %>
+    <%= link_to 'About', "#about", data: { turbo: false } %>
+    <%= link_to 'Problem', "#problem", data: { turbo: false } %>
+    <%= link_to 'How to use', "#how-to-use", data: { turbo: false } %>
+</nav>
