@@ -53,22 +53,83 @@ a {
 }
 
 .menu-button {
+  position: relative;
   width: 30px;
   height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
+  padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
 }
 
 .menu-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 25px;
   height: 1px;
   background: #222;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* 通常時 */
+.menu-button span:nth-child(1) {
+  transform: translate(-50%, -6px);
+}
+
+.menu-button span:nth-child(2) {
+  transform: translate(-50%, 0);
+}
+
+.menu-button span:nth-child(3) {
+  transform: translate(-50%, 6px);
+}
+
+/* 開いた時 */
+.menu-button.is-open span:nth-child(1) {
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.menu-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-open span:nth-child(3) {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+
+.site-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  padding: 120px 50px;
+  background: #f7f5ef;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 99;
+}
+
+.site-menu a {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+}
+
+.site-menu a:hover {
+  transform: translateX(10px);
+  opacity: 0.6;
+}
+.site-menu.is-open {
+  transform: translateX(0);
+}
+
 /* ヒーロー */
 .hero-section {
   min-height: 100vh;
@@ -201,34 +262,59 @@ a {
 }
 
 .problem-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 50px 0;
   border-top: 1px solid #222;
 }
 
-.problem-item span {
+.problem-item {
+  min-height: 400px;
+  padding: 80px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  border-bottom: 1px solid #222;
+}
+.problem-content span {
   font-family: Georgia, serif;
   font-size: 14px;
+  letter-spacing: 0.1em;
 }
 
-.problem-item h3 {
+.problem-content h3 {
   font-family: Georgia, serif;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: normal;
+  line-height: 1.5;
   margin: 30px 0;
 }
 
-.problem-item p {
+.problem-content p {
   font-size: 15px;
   line-height: 2;
   margin: 0;
 }
 
+.problem-image {
+  height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problem-item-reverse .problem-content {
+  order: 2;
+}
+
+.problem-item-reverse .problem-image {
+  order: 1;
+}
+
 /* how-to-use */
 .how-to-section {
-  padding: 140px 20px;
+  padding: 180px 20px;
 }
 
 .how-to-container {
@@ -242,31 +328,108 @@ a {
 }
 
 .how-to-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 50px 0;
   border-top: 1px solid #222;
 }
 
-.how-to-item span {
+.how-to-item {
+  min-height: 400px;
+  padding: 80px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  border-bottom: 1px solid #222;
+}
+
+.how-to-content span {
   font-family: Georgia, serif;
   font-size: 14px;
   letter-spacing: 0.1em;
 }
 
-.how-to-item h3 {
+.how-to-content h3 {
   font-family: Georgia, serif;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: normal;
   line-height: 1.5;
   margin: 30px 0;
 }
 
-.how-to-item p {
+.how-to-content p {
   font-size: 15px;
   line-height: 2;
   margin: 0;
+}
+
+.how-to-image {
+  height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-to-item-reverse .how-to-content {
+  order: 2;
+}
+
+.how-to-item-reverse .how-to-image {
+  order: 1;
+}
+
+/* footer */
+.site-footer {
+  padding: 100px 20px 40px;
+  background: #ebe7dd;
+}
+
+.site-footer-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.site-footer-brand a {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.site-footer-brand p {
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+.site-footer-nav {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.site-footer-nav a {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer-nav a:hover {
+  opacity: 0.5;
+}
+
+.site-footer-bottom {
+  width: min(1100px, 90%);
+  margin: 80px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.site-footer-bottom p {
+  margin: 0;
+  font-size: 12px;
 }
 
 
