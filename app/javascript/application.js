@@ -3,4 +3,5 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "./fade_in"
 import "./menu"
+import "./home"
 
