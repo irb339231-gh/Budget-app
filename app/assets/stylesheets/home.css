@@ -11,10 +11,10 @@
 }
 
 .home-container {
-  padding-top: 90px;
+  padding-top: 70px;
   width: min(1100px, 90%);
   margin: 0 auto;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 .home-grid {
@@ -66,7 +66,7 @@
 /* 金額カード */
 
 .available-card {
-    padding: 30px;
+    padding: 22px;
     border-radius: 16px;
     color: white;
 }
@@ -75,10 +75,7 @@
 /* カード上部 */
 
 .available-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 }
 
 .available-card-top > span {
@@ -136,17 +133,14 @@
 }
 
 .available-amount strong {
-    display: block;
-    font-size: 56px;
-    font-weight: 500;
-    line-height: 1.1;
+    font-size: 44px;
 }
 
 
 /* プログレス */
 
 .available-progress {
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .available-progress-header {
@@ -165,17 +159,14 @@
 }
 
 .home-card {
-    padding: 28px;
+    padding: 20px;
     background: white;
     border: 1px solid #e5e5e5;
     border-radius: 16px;
 }
 
 .home-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 }
 
 .home-card-label {
@@ -201,9 +192,7 @@
 }
 
 .job-search-form {
-    display: flex;
-    align-items: end;
-    gap: 15px;
+    gap: 10px;
 }
 
 .job-search-field {
@@ -219,7 +208,7 @@
 
 .job-search-field input {
     width: 100%;
-    padding: 12px;
+    padding: 9px;
     border: 1px solid #ddd;
     border-radius: 10px;
     background: #fafafa;
@@ -232,8 +221,8 @@
 
 .job-search-submit {
     width: 100%;
-    margin-top: 15px;
-    padding: 11px;
+    margin-top: 10px;
+    padding: 9px;
     border: none;
     border-radius: 10px;
     background: #222;
@@ -254,7 +243,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 17px 5px;
+    padding: 11px 5px;
     border-bottom: 1px solid #eee;
     color: inherit;
     text-decoration: none;
@@ -300,7 +289,7 @@
     display: flex;
     gap: 25px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .transaction-tab {
@@ -330,7 +319,7 @@
 /* 入力フォーム */
 
 .transaction-field {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .transaction-field label {
@@ -342,7 +331,7 @@
 
 .transaction-field input {
     width: 100%;
-    padding: 13px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
     background: #fafafa;
@@ -381,7 +370,7 @@
 
 .transaction-submit {
     width: 100%;
-    padding: 13px;
+    padding: 10px;
     border: none;
     border-radius: 10px;
     color: white;

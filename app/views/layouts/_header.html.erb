@@ -16,16 +16,18 @@
 <nav class="site-menu" id="site-menu">
     <% if user_signed_in? %>
         <%= link_to "Home", home_path %>
-        <span class="menu-section-title">Money Settings</span>
-        <%= link_to "収入", incomes_path %>
-        <%= link_to "将来の支出", future_expenses_path %>
-        <%= link_to "固定費", fixed_costs_path %>
-        <%= link_to "取引履歴", transactions_path %>
-        <span class="menu-divider"></span> 
-        <%= link_to "About", "#about", data: { turbo: false } %>
+        <button type="button" class="menu-parent" id="money-settings-button">
+            <span>Money Settings</span>
+            <span class="menu-arrow">→</span>
+        </button>
+        <div class="menu-submenu" id="money-settings-menu">
+            <%= link_to "収入", incomes_path %>
+            <%= link_to "将来の支出", future_expenses_path %>
+            <%= link_to "固定費", fixed_costs_path %>
+        </div>
         <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "menu-logout" %>
     <% else %>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path %>        
         <%= link_to 'About', "#about", data: { turbo: false } %>
         <%= link_to 'Problem', "#problem", data: { turbo: false } %>
         <%= link_to 'How to use', "#how-to-use", data: { turbo: false } %>

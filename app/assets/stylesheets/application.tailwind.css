@@ -147,15 +147,67 @@ body {
   opacity: 0.6;
 }
 
+/* Money Settings 親メニュー */
+.menu-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: Georgia, serif;
+  font-size: 24px;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/* 矢印 */
+.menu-arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* 子メニュー */
+.menu-submenu {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+
+  padding-left: 15px;
+  margin-top: -5px;
+}
+
+/* 子メニューのリンク */
+.menu-submenu a {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* 開いた状態 */
+.menu-submenu.is-open {
+  display: flex;
+}
+
+/* 開いたとき矢印を回転 */
+.menu-parent.is-open .menu-arrow {
+  transform: rotate(90deg);
+}
+
 .site-footer {
-  padding: 100px 20px 40px;
+  padding: 80px 20px 30px;
   background: #ebe7dd;
   width: 100%;
 }
 
 .site-footer-container {
-  width: min(1100px, 90%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 ;
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -175,4 +227,27 @@ body {
   display: flex;
   gap: 30px;
   align-items: flex-start;
+}
+
+.site-footer-nav a {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer-nav a:hover {
+  opacity: 0.5;
+}
+
+.site-footer-bottom {
+  width: 100%;
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.site-footer-bottom p {
+  margin: 0;
+  font-size: 12px;
 }
