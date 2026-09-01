@@ -3,3 +3,4 @@
 //= link application.css
 //= link top2.css
 //= link home.css
+//= link income.css
