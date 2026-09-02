@@ -1,29 +1,29 @@
-.income-container {
+.fixed-cost-container {
   padding-top: 70px;
   width: min(700px, 90%);
   margin: 0 auto;
   padding-bottom: 60px;
 }
 
-.income-summary {
+.fixed-cost-summary {
   margin-bottom: 24px;
 }
 
-.income-summary-card {
+.fixed-cost-summary-card {
   padding: 24px;
-  background: #2e9b61;
+  background: #d9534f;
   border-radius: 16px;
   color: white;
 }
 
-.income-summary-header,
-.income-card-header {
+.fixed-costsummary-header,
+.fixed-cost-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.income-card-label {
+.fixed-cost-card-label {
   display: block;
   font-family: Georgia, serif;
   font-size: 12px;
@@ -32,64 +32,64 @@
   opacity: 0.7;
 }
 
-.income-summary-header h1,
-.income-card-header h2 {
+.fixed-cost-summary-header h1,
+.fixed-cost-card-header h2 {
   margin: 0;
   font-weight: 500;
 }
 
-.income-summary-header h1 {
+.fixed-cost-summary-header h1 {
   font-size: 24px;
 }
 
-.income-card-header h2 {
+.fixed-cost-card-header h2 {
   font-size: 20px;
 }
 
-.income-total {
+.fixed-cost-total {
   margin-top: 30px;
 }
 
-.income-total span {
+.fixed-cost-total span {
   display: block;
   margin-bottom: 8px;
   font-size: 13px;
   opacity: 0.8;
 }
 
-.income-total strong {
+.fixed-cost-total strong {
   font-size: 42px;
 }
 
-.income-add-button {
+.fixed-cost-add-button {
   display: block;
   margin-top: 24px;
   padding: 10px;
   border-radius: 10px;
   background: white;
-  color: #2e9b61;
+  color: #d9534f;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
 }
 
-.income-card {
+.fixed-cost-card {
   padding: 20px;
   background: white;
   border: 1px solid #e5e5e5;
   border-radius: 16px;
 }
 
-.income-card-header {
+.fixed-cost-card-header {
   margin-bottom: 18px;
 }
 
-.income-list {
+.fixed-cost-list {
   border-top: 1px solid #eee;
 }
 
-.income-item {
+.fixed-cost-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,53 +97,53 @@
   border-bottom: 1px solid #eee;
 }
 
-.income-item-name {
+.fixed-cost-item-name {
   font-size: 15px;
   font-weight: 500;
 }
 
-.income-item-right {
+.fixed-cost-item-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.income-item-right strong {
-  color: #2e9b61;
+.fixed-cost-item-right strong {
+  color: #d9534f;
   font-size: 14px;
   font-weight: 500;
 }
 
-.income-item-right span {
+.fixed-cost-item-right span {
   font-size: 18px;
   opacity: 0.5;
 }
 
-.income-empty {
+.fixed-cost-empty {
   padding: 40px 10px;
   text-align: center;
   color: #777;
   border-top: 1px solid #eee;
 }
 
-.income-empty p {
+.fixed-cost-empty p {
   margin-bottom: 15px;
   font-size: 14px;
 }
 
-.income-empty a {
+.fixed-cost-empty a {
   color: #2e9b61;
   font-size: 13px;
 }
 
-.income-actions {
+.fixed-cost-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-top: 24px;
 }
 
-.income-button {
+.fixed-cost-button {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -151,26 +151,26 @@
   font-size: 13px;
 }
 
-.income-button-primary {
+.fixed-cost-button-primary {
   background: #222;
   color: white;
 }
 
-.income-button-secondary {
+.fixed-cost-button-secondary {
   border: 1px solid #ddd;
   color: #222;
 }
 
 @media (max-width: 768px) {
-  .income-container {
+  .fixed-cost-container {
     width: 90%;
   }
 
-  .income-total strong {
+  .fixed-cost-total strong {
     font-size: 36px;
   }
 
-  .income-actions {
+  .fixed-cost-actions {
     grid-template-columns: 1fr;
   }
 }

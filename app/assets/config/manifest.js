@@ -5,3 +5,4 @@
 //= link home.css
 //= link income.css
 //= link future_expense.css
+//= link fixed_cost.css
