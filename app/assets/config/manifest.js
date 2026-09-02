@@ -4,3 +4,4 @@
 //= link top2.css
 //= link home.css
 //= link income.css
+//= link future_expense.css
