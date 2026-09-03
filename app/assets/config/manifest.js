@@ -6,3 +6,6 @@
 //= link income.css
 //= link future_expense.css
 //= link fixed_cost.css
+//= link income_edit_all.css
+//= link future_expense_edit_all.css
+//= link fixed_cost_edit_all.css
