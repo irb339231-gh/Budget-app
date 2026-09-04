@@ -162,12 +162,10 @@ body {
 .problem-item {
   min-height: 400px;
   padding: 80px 0;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-
   border-bottom: 1px solid #222;
 }
 .problem-content span {
@@ -190,19 +188,24 @@ body {
   margin: 0;
 }
 
-.problem-image {
+.problem-img {
   height: 280px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.problem-item-reverse .problem-content {
+.problem-img img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.problem-item:nth-child(2) .problem-content {
   order: 2;
 }
 
-.problem-item-reverse .problem-image {
+.problem-item:nth-child(2) .problem-img {
   order: 1;
 }
 
