@@ -1,0 +1,102 @@
+.future-expense-edit-container {
+  padding-top: 70px;
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.future-expense-edit-section {
+  width: 100%;
+}
+
+.future-expense-edit-card {
+  padding: 24px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.future-expense-edit-header {
+  margin-bottom: 30px;
+}
+
+.future-expense-edit-card-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.future-expense-edit-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.future-expense-edit-form-group {
+  margin-bottom: 22px;
+}
+
+.future-expense-edit-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.future-expense-edit-form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.future-expense-edit-form-group input:focus {
+  border-color: #999;
+}
+
+.future-expense-edit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.future-expense-edit-button {
+  display: block;
+  padding: 11px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.future-expense-edit-button-primary {
+  width: 100%;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.future-expense-edit-button-secondary {
+  border: 1px solid #ddd;
+  color: #222;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .future-expense-edit-container {
+    width: 90%;
+  }
+
+  .future-expense-edit-actions {
+    grid-template-columns: 1fr;
+  }
+}
