@@ -1,28 +1,37 @@
-<div class="container mx-auto px-4 py-8 max-w-lg">
-  <%# フォーム %>
-  <div class="card bg-base-200 shadow-xl">
-    <div class="card-body">
-      <%= form_with model: @fixed_cost, url: fixed_cost_path(@fixed_cost), method: :patch, scope: :fixed_cost do |f| %>
-        <%= render "devise/shared/error_messages", resource: @fixed_cost %>
-      
-        <div class="form-control mb-4">
-          <%= f.label :name, "固定費名", class: "label" %>
-          <%= f.text_field :name, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：保険、スマホ代" %>
-        </div>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "fixed_cost_edit", "data-turbo-track": "reload" %>
+<% end %>
 
-        <div class="form-control mb-6">
-          <%= f.label :amount, "金額", class: "label" %>
-          <%= f.number_field :amount, class: "input input-bordered w-full rounded-2xl",
+<div class="fixed-cost-edit-container">
+  <section class="fixed-cost-edit-section">
+    <div class="fixed-cost-edit-card">
+      <div class="fixed-cost-edit-header">
+        <span class="fixed-cost-edit-card-label">Edit Fixed Cost</span>
+        <h1>固定費を編集</h1>
+      </div>
+      <%= form_with model: @fixed_cost,
+          url: fixed_cost_path(@fixed_cost),
+          method: :patch,
+          scope: :fixed_cost do |f| %>
+        <%= render "devise/shared/error_messages", resource: @fixed_cost %>
+        <div class="fixed-cost-edit-form-group">
+          <%= f.label :name, "固定費名" %>
+          <%= f.text_field :name,
+              placeholder: "例：ローン、携帯代" %>
+        </div>
+        <div class="fixed-cost-edit-form-group">
+          <%= f.label :amount, "金額" %>
+          <%= f.number_field :amount,
               placeholder: "例：1000000" %>
         </div>
-
-        <div class="form-control">
-          <%= f.submit "更新する", class: "btn btn-primary w-full rounded-2xl" %>
+        <div class="fixed-cost-edit-actions">
+          <%= f.submit "更新する",
+              class: "fixed-cost-edit-button fixed-cost-edit-button-primary" %>
+          <%= link_to "戻る",
+              edit_all_fixed_costs_path,
+              class: "fixed-cost-edit-button fixed-cost-edit-button-secondary" %>
         </div>
       <% end %>
-
-      <%= link_to "戻る", edit_all_fixed_costs_path, class: "btn btn-outline w-full mt-4 rounded-2xl" %>
     </div>
-  </div>
+  </section>
 </div>
