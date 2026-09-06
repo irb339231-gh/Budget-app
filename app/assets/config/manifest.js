@@ -12,3 +12,6 @@
 //= link income_edit.css
 //= link future_expense_edit.css
 //= link fixed_cost_edit.css
+//= link income_new.css
+//= link future_expense_new.css
+//= link fixed_cost_new.css
