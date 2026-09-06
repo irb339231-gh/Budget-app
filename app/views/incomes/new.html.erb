@@ -1,29 +1,36 @@
-<div class="container mx-auto px-4 py-8 max-w-lg">
-  <div class="card bg-base-200 shadow-xl">
-    <div class="card-body">
-      <h2 class="card-title">収入追加</h2>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "income_new", "data-turbo-track": "reload" %>
+<% end %>
 
-      <%= form_with model: @income, url: incomes_path, scope: :income do |f| %>
+<div class="income-new-container">
+  <section class="income-new-section">
+    <div class="income-new-card">
+      <div class="income-new-header">
+        <span class="income-new-card-label">New Income</span>
+        <h1>収入を追加</h1>
+      </div>
+      <%= form_with model: @income,
+          url: incomes_path,
+          scope: :income do |f| %>
         <%= render "devise/shared/error_messages", resource: @income %>
-
-        <div class="form-control mb-4">
-          <%= f.label :name, "収入名", class: "label font-bold" %>
-          <%= f.text_field :name, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：貯蓄、退職金" %>
+        <div class="income-new-form-group">
+          <%= f.label :name, "収入名" %>
+          <%= f.text_field :name,
+              placeholder: "例：給与、退職金" %>
         </div>
-
-        <div class="form-control mb-6">
-          <%= f.label :amount, "金額", class: "label font-bold" %>
-          <%= f.number_field :amount, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：1000000" %>
+        <div class="income-new-form-group">
+          <%= f.label :amount, "金額" %>
+          <%= f.number_field :amount,
+              placeholder: "例：100000" %>
         </div>
-
-        <div class="form-control">
-          <%= f.submit "追加する", class: "btn btn-primary w-full rounded-2xl" %>
+        <div class="income-new-actions">
+          <%= f.submit "追加する",
+              class: "income-new-button income-new-button-primary" %>
+          <%= link_to "戻る",
+              incomes_path,
+              class: "income-new-button income-new-button-secondary" %>
         </div>
       <% end %>
-
-      <%= link_to "戻る", incomes_path, class: "btn btn-outline w-full mt-4 rounded-2xl" %>
     </div>
-  </div>
+  </section>
 </div>
