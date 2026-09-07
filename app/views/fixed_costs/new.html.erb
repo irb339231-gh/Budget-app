@@ -1,26 +1,36 @@
-<div class="container mx-auto px-4 py-8 max-w-lg">
-  <div class="card bg-base-100 shadow-xl">
-      <%= form_with model: @fixed_cost, url: fixed_costs_path, scope: :fixed_cost do |f| %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "fixed_cost_new", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="fixed-cost-new-container">
+  <section class="fixed-cost-new-section">
+    <div class="fixed-cost-new-card">
+      <div class="fixed-cost-new-header">
+        <span class="fixed-cost-new-card-label">New Fixed Cost</span>
+        <h1>固定費を追加</h1>
+      </div>
+      <%= form_with model: @fixed_cost,
+          url: fixed_costs_path,
+          scope: :fixed_cost do |f| %>
         <%= render "devise/shared/error_messages", resource: @fixed_cost %>
-
-        <div class="form-control mb-4">
-          <%= f.label :name, "固定費名", class: "label" %>
-          <%= f.text_field :name, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：保険、スマホ代" %>
+        <div class="fixed-cost-new-form-group">
+          <%= f.label :name, "固定費名" %>
+          <%= f.text_field :name,
+              placeholder: "例：ローン、携帯代" %>
         </div>
-
-        <div class="form-control mb-6">
-          <%= f.label :amount, "金額", class: "label" %>
-          <%= f.number_field :amount, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：1000000" %>
+        <div class="fixed-cost-new-form-group">
+          <%= f.label :amount, "金額" %>
+          <%= f.number_field :amount,
+              placeholder: "例：100000" %>
         </div>
-
-        <div class="form-control">
-          <%= f.submit "追加する", class: "btn btn-primary w-full rounded-2xl" %>
+        <div class="fixed-cost-new-actions">
+          <%= f.submit "追加する",
+              class: "fixed-cost-new-button fixed-cost-new-button-primary" %>
+          <%= link_to "戻る",
+              fixed_costs_path,
+              class: "fixed-cost-new-button fixed-cost-new-button-secondary" %>
         </div>
       <% end %>
-
-      <%= link_to "戻る", edit_all_fixed_costs_path, class: "btn btn-outline w-full mt-4 rounded-2xl" %>
     </div>
-  </div>
+  </section>
 </div>

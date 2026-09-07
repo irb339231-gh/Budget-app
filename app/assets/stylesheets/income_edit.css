@@ -1,0 +1,102 @@
+.income-edit-container {
+  padding-top: 70px;
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.income-edit-section {
+  width: 100%;
+}
+
+.income-edit-card {
+  padding: 24px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.income-edit-header {
+  margin-bottom: 30px;
+}
+
+.income-edit-card-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.income-edit-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.income-edit-form-group {
+  margin-bottom: 22px;
+}
+
+.income-edit-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.income-edit-form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.income-edit-form-group input:focus {
+  border-color: #999;
+}
+
+.income-edit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.income-edit-button {
+  display: block;
+  padding: 11px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.income-edit-button-primary {
+  width: 100%;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.income-edit-button-secondary {
+  border: 1px solid #ddd;
+  color: #222;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .income-edit-container {
+    width: 90%;
+  }
+
+  .income-edit-actions {
+    grid-template-columns: 1fr;
+  }
+}

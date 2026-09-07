@@ -1,0 +1,193 @@
+.fixed-cost-edit-all-container {
+  padding-top: 70px;
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.fixed-cost-edit-all-summary {
+  margin-bottom: 24px;
+}
+
+.fixed-cost-edit-all-summary-card {
+  padding: 24px;
+  background: #d9534f;
+  border-radius: 16px;
+  color: white;
+}
+
+.fixed-cost-edit-all-summary-header,
+.fixed-cost-edit-all-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.fixed-cost-edit-all-card-label {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin-bottom: 5px;
+  opacity: 0.7;
+}
+
+.fixed-cost-edit-all-summary-header h1,
+.fixed-cost-edit-all-card-header h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.fixed-cost-edit-all-summary-header h1 {
+  font-size: 24px;
+}
+
+.fixed-cost-edit-all-card-header h2 {
+  font-size: 20px;
+}
+
+.fixed-cost-edit-all-total {
+  margin-top: 30px;
+}
+
+.fixed-cost-edit-all-total span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.fixed-cost-edit-all-total strong {
+  font-size: 42px;
+}
+
+.fixed-cost-edit-all-add-button {
+  display: block;
+  margin-top: 24px;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  color: #d9534f;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fixed-cost-edit-all-card {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.fixed-cost-edit-all-card-header {
+  margin-bottom: 18px;
+}
+
+.fixed-cost-edit-all-list {
+  border-top: 1px solid #eee;
+}
+
+.fixed-cost-edit-all-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.fixed-cost-edit-all-item-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.fixed-cost-edit-all-item-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fixed-cost-edit-all-item-right strong {
+  color: #2e9b61;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.fixed-cost-edit-all-button {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.fixed-cost-edit-all-button-edit {
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+}
+
+.fixed-cost-edit-all-button-delete {
+  border: 1px solid #d9534f;
+  background: white;
+  color: #d9534f;
+}
+
+.fixed-cost-edit-all-button-back {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+}
+
+.fixed-cost-edit-all-empty {
+  padding: 40px 10px;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+.fixed-cost-edit-all-empty p {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.fixed-cost-edit-all-empty a {
+  color: #d9534f;
+  font-size: 13px;
+}
+
+.fixed-cost-edit-all-actions {
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .fixed-cost-edit-all-container {
+    width: 90%;
+  }
+
+  .fixed-cost-edit-all-total strong {
+    font-size: 36px;
+  }
+
+  .fixed-cost-edit-all-item {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .fixed-cost-edit-all-item-right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .fixed-cost-edit-all-item-right strong {
+    width: 100%;
+    text-align: right;
+    margin-right: 0;
+  }
+}

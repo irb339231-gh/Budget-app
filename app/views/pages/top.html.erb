@@ -1,189 +1,166 @@
-<%# ヒーローセクション %>
-<div class="min-h-screen flex items-center justify-center bg-base-200 relative overflow-hidden">
-  
-  <%# イクラの背景装飾 %>
-  <div class="absolute inset-0 pointer-events-none">
-    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-full opacity-30">
-      <%# 左側 %>
-      <circle cx="50" cy="80" r="40" fill="#f57b23"/>
-      <circle cx="50" cy="60" r="20" fill="#fb5203"/>
-      
-      <circle cx="120" cy="180" r="35" fill="#f57b23"/>
-      <circle cx="120" cy="163" r="17" fill="#fb5203"/>
-      
-      <circle cx="60" cy="300" r="44" fill="#f57b23"/>
-      <circle cx="60" cy="278" r="22" fill="#fb5203"/>
-      
-      <circle cx="130" cy="420" r="38" fill="#f57b23"/>
-      <circle cx="130" cy="401" r="19" fill="#fb5203"/>
-      
-      <circle cx="50" cy="520" r="42" fill="#f57b23"/>
-      <circle cx="50" cy="499" r="21" fill="#fb5203"/>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "top2", "data-turbo-track": "reload" %>
+<% end %>
 
-      <%# 右側 %>
-      <circle cx="750" cy="80" r="44" fill="#f57b23"/>
-      <circle cx="750" cy="58" r="22" fill="#fb5203"/>
-      
-      <circle cx="680" cy="180" r="38" fill="#f57b23"/>
-      <circle cx="680" cy="161" r="19" fill="#fb5203"/>
-      
-      <circle cx="760" cy="300" r="40" fill="#f57b23"/>
-      <circle cx="760" cy="280" r="20" fill="#fb5203"/>
-      
-      <circle cx="690" cy="420" r="46" fill="#f57b23"/>
-      <circle cx="690" cy="397" r="23" fill="#fb5203"/>
-      
-      <circle cx="750" cy="520" r="38" fill="#f57b23"/>
-      <circle cx="750" cy="501" r="19" fill="#fb5203"/>
-
-      <%# 上部 %>
-      <circle cx="250" cy="40" r="36" fill="#f57b23"/>
-      <circle cx="250" cy="22" r="18" fill="#fb5203"/>
-      
-      <circle cx="400" cy="30" r="42" fill="#f57b23"/>
-      <circle cx="400" cy="9" r="21" fill="#fb5203"/>
-      
-      <circle cx="550" cy="50" r="38" fill="#f57b23"/>
-      <circle cx="550" cy="31" r="19" fill="#fb5203"/>
-
-      <%# 下部 %>
-      <circle cx="250" cy="560" r="40" fill="#f57b23"/>
-      <circle cx="250" cy="540" r="20" fill="#fb5203"/>
-      
-      <circle cx="400" cy="570" r="44" fill="#f57b23"/>
-      <circle cx="400" cy="549" r="22" fill="#fb5203"/>
-      
-      <circle cx="550" cy="555" r="36" fill="#f57b23"/>
-      <circle cx="550" cy="536" r="18" fill="#fb5203"/>
-    </svg>
-  </div>
-
-    <div class="card bg-base-100 shadow-2xl max-w-4xl w-full mx-4 relative z-10">
-      <div class="card-body text-center py-16 px-12">
-        <h1 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">
-          プチッと弾けるのはイクラだけ。<br />
-          転職中のお金管理は<span class="text-primary">『いくら。』</span>で完璧。
-        </h1>
-        <div class="flex gap-4 justify-center">
-          <%= link_to "無料で始める", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-          <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline btn-lg" %>
+<!-- ヒーロ -->
+<section class="hero-section fade-in" id="home">
+    <div class="hero-content">
+        <div class="hero-logo">
+            <span class="hero-logo-main">いくら。</span>
         </div>
-      </div>
+        <div class="hero-buttons">
+            <%= link_to '新規登録', new_user_registration_path, class: "hero-button hero-button-primary" %>
+            <%= link_to 'ログイン', new_user_session_path, class: "hero-button hero-button-secondary" %>
+        </div>
     </div>
-  </div>
-</div>
-<%# サービスの特徴 %>
-<div class="bg-base-100 py-16 px-4">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-4">こんなお悩みありませんか？</h2>
-    <p class="text-center text-gray-500 mb-12">転職活動中、お金の不安を抱えていませんか？</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+</section>
 
-      <div class="card shadow-md bg-base-300 hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-lg mb-2">収入ゼロの不安、<br/>誰に相談すればいいの？</h3>
-          <p class="text-gray-500 text-sm">
-            退職した途端に収入がゼロに。<br/>
-            貯金を切り崩す毎日に<br/>
-            「このままで大丈夫？」と不安になる。
-          </p>
+<!-- about -->
+<section class="about-section fade-in" id="about">
+    <div class="about-container">
+        <h2 class="section-title">
+            About
+        </h2>
+        <div class="about-introduction">
+            <h3>
+                「いくら。」とは？
+            </h3>
+            <p>
+                「いくら。」は、転職活動中のお金の不安を解消します。
+            </p>
+            <p>
+               退職してから次の仕事が決まるまで、収入がなくなることで、お金への不安は大きくなります。
+            </p>
         </div>
-      </div>
-
-      <div class="card shadow-md bg-base-300 hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-lg mb-2">電卓片手に計算、<br/>もう疲れた。</h3>
-          <p class="text-gray-500 text-sm">
-            固定費・貯金・将来の出費...<br/>
-            毎月手計算するのは限界。<br/>
-            もっと簡単に把握したい。
-          </p>
+        <div class="about-description">
+            <p>
+                「貯金は後どれくらい持つ？」
+            </p>
+            <p>
+                「今月はいくらまで使っていい？」
+            </p>
+            <p>
+                「このままで収入ゼロのまま転職活動を続けても大丈夫？」
+            </p>
         </div>
-      </div>
-
-      <div class="card shadow-md bg-base-300 hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-lg mb-2">お金の心配で、<br/>面接に集中できない</h3>
-          <p class="text-gray-500 text-sm">
-            「次の面接、うまくいくかな」より<br/>
-            「来月の生活費、大丈夫かな」が<br/>
-            頭をよぎってしまう。
-          </p>
-        </div>
-      </div>
-
+        <div class="about-message">
+            <p>
+                「いくら。」では、貯金・収入・固定費・日々の支出などを入力することで、現在の資金状況を見える化します。<br>
+                お金の不安を減らし、あなたが次の一歩を選択するための判断材料を提供します。
+            </p>
+        </div> 
     </div>
-  </div>
-</div>
+</section>
 
-<%# 使い方 %>
-<div class="bg-base-200 py-16 px-4">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-4">使い方はかんたん3ステップ</h2>
-    <p class="text-center text-gray-500 mb-12">登録から3分で「今使える金額」がわかる</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- problem -->
+<section class="problem-section fade-in" id="problem">
+    <div class="problem-container">
+        <h2 class="section-title">
+            Problem
+        </h2>
+        <div class="problem-list">
+            <article class="problem-item fade-in">
+                <div class="problem-content">
+                    <span>01</span>
+                    <h3>収入ゼロの不安、<br>
+                    誰に相談すればいいの？</h3>
+                    <p>
+                        退職した途端に収入がゼロに。<br>
+                        貯金を切り崩す毎日に「このままで大丈夫？」と不安になる。
+                    </p>
+                </div>
 
-      <div class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <div class="badge badge-primary badge-lg mb-4">Step 1</div>
-          <h3 class="card-title justify-center mb-2">新規登録する</h3>
-          <p class="text-gray-500 text-sm">
-            メールアドレスだけで<br/>
-            すぐに始められます。<br/>
-          </p>
+                <div class="problem-img">
+                    <%= image_tag "problem-01.png", alt: "" %>
+                </div>
+            </article>
+
+            <article class="problem-item fade-in">
+                <div class="problem-img">
+                    <%= image_tag "problem-02.png", alt: "" %>
+                </div>
+                <div class="problem-content">
+                    <span>02</span>
+                    <h3>電卓・エクセルでの計算<br>
+                    もう疲れた。</h3>
+                    <p>
+                        貯金・将来の支出・固定費...<br>
+                        毎月計算するのは限界。<br>
+                        もっと簡単に把握したい。
+                    </p>
+                </div>
+            </article>
+
+            <article class="problem-item fade-in">
+                <div class="problem-content">
+                    <span>03</span>
+                    <h3>お金の心配で、<br>
+                    転職活動に集中できない。</h3>
+                    <p>
+                        「自分の挑戦したい企業に入る！」より、<br>
+                        「来月の生活費、大丈夫かな？」が頭をよぎってしまう。
+                    </p>
+                </div>
+
+                <div class="problem-img">
+                    <%= image_tag "problem-03.png", alt: "" %>
+                </div>
+            </article>
         </div>
-      </div>
-
-      <div class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <div class="badge badge-primary badge-lg mb-4">Step 2</div>
-          <h3 class="card-title justify-center mb-2">期間・収入・支出・固定費を入力する</h3>
-          <p class="text-gray-500 text-sm">
-            転職期間・貯蓄・将来の支出・<br/>
-            固定費を入力するだけ。<br/>
-            ガイドに沿って簡単入力。
-          </p>
-        </div>
-      </div>
-
-      <div class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-        <div class="card-body text-center">
-          <div class="badge badge-primary badge-lg mb-4">Step 3</div>
-          <h3 class="card-title justify-center mb-2">今使える金額を確認</h3>
-          <p class="text-gray-500 text-sm">
-            自動計算された<br/>
-            「今使える金額」を確認。<br/>
-            お金の不安からサヨナラ。
-          </p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
+</section>
 
-<%# CTA %>
-<div class="bg-primary text-primary-content py-20 px-4 relative overflow-hidden">
-  <%# 背景のイクラ装飾 %>
-  <div class="absolute inset-0 pointer-events-none opacity-20">
-    <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-      <circle cx="50" cy="80" r="40" fill="#fff"/>
-      <circle cx="50" cy="60" r="20" fill="#f57b23"/>
-      <circle cx="750" cy="200" r="44" fill="#fff"/>
-      <circle cx="750" cy="178" r="22" fill="#f57b23"/>
-      <circle cx="150" cy="250" r="36" fill="#fff"/>
-      <circle cx="150" cy="232" r="18" fill="#f57b23"/>
-      <circle cx="650" cy="50" r="38" fill="#fff"/>
-      <circle cx="650" cy="31" r="19" fill="#f57b23"/>
-    </svg>
-  </div>
+<!-- how to use -->
+<section class="how-to-section fade-in" id="how-to-use">
+    <div class="how-to-container">
+        <h2 class="section-title">
+            How to use
+        </h2>
+        <div class="how-to-list">
+            <article class="how-to-item fade-in">
+                <div class="how-to-content">
+                    <span>01</span>
+                    <h3>新規登録する</h3>
+                    <p>
+                        アカウントを作成して、ログインします。
+                    </p>
+                </div>
+                <div class="how-to-image">
+                    <!-- イラスト01 -->
+                </div>
+            </article>
+            <article class="how-to-item fade-in">
+                <div class="how-to-image">
+                    <!-- イラスト01 -->
+                </div>
+                <div class="how-to-content">
+                    <span>02</span>
+                    <h3>期間・お金の情報を入力</h3>
+                    <p>
+                        転職期間・貯金・将来の支出・<br>
+                        固定費などを入力するだけ。<br>
+                        ガイドに沿って簡単に入力できます。
+                    </p>
+                </div>
+            </article>
+            <article class="how-to-item">
+                <div class="how-to-content">
+                    <span>03</span>
+                    <h3>今使える金額を確認</h3>
+                    <p>
+                        入力した情報から自動で計算。<br>
+                        日・週・月・全体の期間から「今使える金額」を確認できます。
+                    </p>
+                </div>
+                <div class="how-to-image">
+                    <!-- イラスト01 -->
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
-  <div class="text-center relative z-10">
-    <h2 class="text-4xl font-bold mb-4">
-      今日から始めよう。<br/>
-      お金の不安を、<span class="text-base-100">『いくら。』</span>で解消。
-    </h2>
-    <%= link_to "今すぐ無料で始める ", new_user_registration_path, 
-        class: "btn btn-lg bg-base-100 text-primary hover:bg-gray-100 font-bold" %>
-  </div>
-</div>
+
+
+
+

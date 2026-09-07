@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :password, pwned: true, if: -> { password_required? && !Rails.env.test? }
+  validate :job_search_end_month_after_start_month
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -55,7 +56,8 @@ class User < ApplicationRecord
 
   def weekly_available_amount
     return 0 if job_search_days.zero? # daysが0の場合は除く
-    available_amount / (job_search_days / 7) # 転職活動期間を7で割る
+    return 0 if job_search_days < 7
+    (available_amount / (job_search_days / 7.0)).to_i # 転職活動期間を7.0で割る（７日未満の場合も計算するため7.0とする）
   end
 
   def monthly_available_amount
@@ -97,5 +99,14 @@ class User < ApplicationRecord
   def available_amount_percentage
     return 0 if total_income.zero? # total_incomeが0の場合は除く
     (available_amount.to_f / total_income.to_f * 100).round
+  end
+
+  private
+
+  def job_search_end_month_after_start_month
+    return if job_search_start_month.nil? || job_search_end_month.nil?
+    if job_search_start_month >= job_search_end_month
+      errors.add(:base, "終了日は開始日以降の日付を選択してください。")
+    end
   end
 end

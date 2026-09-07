@@ -1,0 +1,170 @@
+.devise-login-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 20px 60px;
+  box-sizing: border-box;
+}
+
+.devise-login-card {
+  width: min(500px, 100%);
+  padding: 28px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.devise-login-header {
+  margin-bottom: 30px;
+}
+
+.devise-login-card-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.devise-login-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.devise-login-form-group {
+  margin-bottom: 22px;
+}
+
+.devise-login-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.devise-login-form-group input[type="email"],
+.devise-login-form-group input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.devise-login-form-group input:focus {
+  border-color: #999;
+}
+
+.devise-login-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.devise-login-remember input {
+  width: 15px;
+  height: 15px;
+}
+
+.devise-login-remember label {
+  cursor: pointer;
+}
+
+.devise-login-button {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.devise-login-button-primary {
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.devise-login-button-primary:hover {
+  background: #333;
+}
+
+.devise-login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.devise-login-divider::before,
+.devise-login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.devise-login-button-google {
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+}
+
+.devise-login-button-google:hover {
+  background: #fafafa;
+}
+
+.devise-login-google-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.devise-login-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.devise-login-links a {
+  text-decoration: none;
+}
+
+.devise-login-link-primary {
+  color: #222;
+  font-weight: 500;
+}
+
+.devise-login-link-secondary {
+  color: #777;
+}
+
+.devise-login-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .devise-login-container {
+    padding: 50px 20px 40px;
+  }
+
+  .devise-login-card {
+    padding: 24px;
+  }
+}

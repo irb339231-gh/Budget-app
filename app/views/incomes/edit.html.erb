@@ -1,28 +1,37 @@
-<div class="container mx-auto px-4 py-8 max-w-lg">
-  <%# フォーム %>
-  <div class="card bg-base-200 shadow-xl">
-    <div class="card-body">
-      <%= form_with model: @income, url: income_path(@income), method: :patch, scope: :income do |f| %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "income_edit", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="income-edit-container">
+  <section class="income-edit-section">
+    <div class="income-edit-card">
+      <div class="income-edit-header">
+        <span class="income-edit-card-label">Edit Income</span>
+        <h1>収入を編集</h1>
+      </div>
+      <%= form_with model: @income,
+          url: income_path(@income),
+          method: :patch,
+          scope: :income do |f| %>
         <%= render "devise/shared/error_messages", resource: @income %>
-
-        <div class="form-control mb-4">
-          <%= f.label :name, "収入名", class: "label font-bold" %>
-          <%= f.text_field :name, class: "input input-bordered w-full rounded-2xl",
-              placeholder: "例：貯蓄、退職金" %>
+        <div class="income-edit-form-group">
+          <%= f.label :name, "収入名" %>
+          <%= f.text_field :name,
+              placeholder: "例：給与、退職金" %>
         </div>
-
-        <div class="form-control mb-6">
-          <%= f.label :amount, "金額", class: "label font-bold" %>
-          <%= f.number_field :amount, class: "input input-bordered w-full rounded-2xl",
+        <div class="income-edit-form-group">
+          <%= f.label :amount, "金額" %>
+          <%= f.number_field :amount,
               placeholder: "例：1000000" %>
         </div>
-
-        <div class="form-control">
-          <%= f.submit "更新する", class: "btn btn-primary w-full rounded-2xl" %>
+        <div class="income-edit-actions">
+          <%= f.submit "更新する",
+              class: "income-edit-button income-edit-button-primary" %>
+          <%= link_to "戻る",
+              edit_all_incomes_path,
+              class: "income-edit-button income-edit-button-secondary" %>
         </div>
       <% end %>
-
-      <%= link_to "戻る", edit_all_incomes_path, class: "btn btn-outline w-full mt-4 rounded-2xl" %>
     </div>
-  </div>
+  </section>
 </div>

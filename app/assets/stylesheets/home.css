@@ -1,0 +1,440 @@
+.available-card-success {
+  background: #2e9b61;
+}
+
+.available-card-warning {
+  background: #f0a500;
+}
+
+.available-card-error {
+  background: #d9534f;
+}
+
+.home-container {
+  padding-top: 70px;
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.home-grid > section {
+  height: 100%;
+}
+
+.home-grid .home-card,
+.home-grid .available-card {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.available-section {
+    margin-bottom: 0px;
+}
+
+.available-header {
+    margin-bottom: 20px;
+}
+
+.available-label {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+
+.available-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+    color: #222;
+}
+
+
+/* 金額カード */
+
+.available-card {
+    padding: 22px;
+    border-radius: 16px;
+    color: white;
+}
+
+
+/* カード上部 */
+
+.available-card-top {
+    margin-bottom: 30px;
+}
+
+.available-card-top > span {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+
+/* タブ */
+
+.available-tab-list {
+    display: flex;
+    gap: 20px;
+}
+
+.available-tab {
+    cursor: pointer;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+}
+
+.available-tab input {
+    display: none;
+}
+
+.available-tab span {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.available-tab:has(input:checked) {
+    border-bottom-color: white;
+}
+
+.available-tab:has(input:checked) span {
+    opacity: 1;
+}
+
+
+/* 金額 */
+
+.available-amount {
+    display: none;
+}
+
+.available-card .available-amount[data-period-content="all"] {
+    display: block;
+}
+
+.available-amount > span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.available-amount strong {
+    font-size: 44px;
+}
+
+
+/* プログレス */
+
+.available-progress {
+    margin-top: 25px;
+}
+
+.available-progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.available-progress progress {
+    width: 100%;
+    height: 7px;
+}
+.job-search-section {
+    margin-bottom: 0px;
+}
+
+.home-card {
+    padding: 20px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+}
+
+.home-card-header {
+    margin-bottom: 18px;
+}
+
+.home-card-label {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+
+.home-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.job-search-months {
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #f2f2f2;
+    font-size: 13px;
+}
+
+.job-search-form {
+    gap: 10px;
+}
+
+.job-search-field {
+    flex: 1;
+}
+
+.job-search-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.job-search-field input {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.job-search-arrow {
+    padding-bottom: 12px;
+    opacity: 0.5;
+}
+
+.job-search-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 9px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.breakdown-section {
+    margin-bottom: 0px;
+}
+
+.breakdown-list {
+    border-top: 1px solid #eee;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 5px;
+    border-bottom: 1px solid #eee;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.breakdown-item:hover {
+    background: #fafafa;
+}
+
+.breakdown-item span {
+    font-size: 14px;
+}
+
+.breakdown-item strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.breakdown-item .income {
+    color: #2e9b61;
+}
+
+.breakdown-item .expense {
+    color: #d9534f;
+}
+
+.transaction-section {
+    margin-bottom: 0px;
+}
+
+.transaction-history-link {
+    font-size: 13px;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* 支出・収入タブ */
+
+.transaction-tabs {
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.transaction-tab {
+    position: relative;
+    padding: 10px 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.transaction-tab.active {
+    font-weight: 600;
+}
+
+.transaction-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #222;
+}
+
+
+/* 入力フォーム */
+
+.transaction-field {
+    margin-bottom: 12px;
+}
+
+.transaction-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.transaction-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+
+/* 金額 */
+
+.transaction-amount-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    padding-left: 13px;
+}
+
+.transaction-amount-input span {
+    font-size: 16px;
+}
+
+.transaction-amount-input input {
+    border: none;
+    background: transparent;
+    padding-left: 5px;
+}
+
+.transaction-amount-input input:focus {
+    outline: none;
+}
+
+
+/* 登録ボタン */
+
+.transaction-submit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.expense-submit {
+    background: #d9534f;
+}
+
+.income-submit {
+    background: #2e9b61;
+}
+
+.settings-money-section {
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+}
+
+.money-setting-list {
+    border-top: 1px solid #eee;
+}
+
+.money-setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+}
+
+.money-setting-item:hover {
+    background: #fafafa;
+}
+
+.money-setting-title {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.money-setting-description {
+    display: block;
+    font-size: 12px;
+    opacity: 0.55;
+}
+
+.money-setting-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.money-setting-right strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.money-setting-right span {
+    font-size: 18px;
+    opacity: 0.5;
+}

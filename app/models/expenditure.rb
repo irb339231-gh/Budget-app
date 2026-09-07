@@ -5,5 +5,5 @@ class Expenditure < ApplicationRecord
 
   validates :name, presence: true
   validates :category, presence: true
-  validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :amount, presence: true, numericality: { greater_than: 0, less_than_or_equal_to: 99999999 }
 end

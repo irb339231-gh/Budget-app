@@ -9,9 +9,17 @@ class TransactionsController < ApplicationController
   def create
     @transaction = current_user.transactions.build(transaction_params)
     if @transaction.save
-      redirect_to home_path, notice: "取引を登録しました"
+      if @transaction.expense?
+        redirect_to home_path, notice: "支出を登録しました"
+      else
+        redirect_to home_path, notice: "収入を登録しました"
+      end
     else
-      redirect_to home_path, alert: "取引の登録に失敗しました"
+      if @transaction.expense?
+        redirect_to home_path, alert: "支出の登録に失敗しました"
+      else
+        redirect_to home_path, alert: "収入の登録に失敗しました"
+      end
     end
   end
 

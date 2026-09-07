@@ -1,51 +1,68 @@
-<div class="container mx-auto px-4 py-8 max-w-2xl">
-  <%# ヘッダーカード %>
-  <div class="rounded-3xl p-6 mb-6 text-white"
-       style="background: linear-gradient(135deg, #f97316, #ea580c);">
-    <p class="text-sm opacity-80 mb-1">将来の支出合計</p>
-    <p class="text-4xl font-bold mb-4">
-      ¥<%= number_with_delimiter(@future_expenses.sum(:amount)) %>
-    </p>
-    <div class="flex justify-between items-center">
-      <p class="text-sm opacity-80">登録件数：<%= @future_expenses.count %>件</p>
-      <%= link_to "＋ 追加する", new_future_expense_path, class: "btn btn-sm bg-white text-primary border-none" %>
-    </div>
-  </div>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "future_expense_edit_all", "data-turbo-track": "reload" %>
+<% end %>
 
-  <%# 一覧 %>
-  <div class="card bg-base-200 shadow-xl">
-    <div class="card-body">
-      <h3 class="font-bold text-lg mb-4">将来の支出編集</h3> 
+<div class="future-expense-edit-all-container">
+  <section class="future-expense-edit-all-summary">
+    <div class="future-expense-edit-all-summary-card">
+      <div class="future-expense-edit-all-summary-header">
+        <div>
+          <span class="future-expense-edit-all-card-label">Future Expense Edit</span>
+          <h1>支出</h1>
+        </div>
+      </div>
+      <div class="future-expense-edit-all-total">
+        <span>支出合計</span>
+        <strong>¥<%= number_with_delimiter(@future_expenses.sum(:amount)) %></strong>
+      </div>
+      <%= link_to "＋ 支出を追加", new_future_expense_path,class: "future-expense-edit-all-add-button" %>
+    </div>
+  </section>
+ 
+  <section class="future-expense-edit-all-list-section">
+    <div class="future-expense-edit-all-card">
+      <div class="future-expense-edit-all-card-header">
+        <div>
+          <span class="future-expense-edit-all-card-label">Future Expense List</span>
+          <h2>支出編集</h2>
+        </div>
+      </div>
+
       <% if @future_expenses.any? %>
-        <div class="space-y-3">
+        <div class="future-expense-edit-all-list">
           <% @future_expenses.each do |future_expense| %>
-            <div class="flex justify-between items-center p-4 bg-base-100 rounded-2xl">
-              <div class="flex items-center gap-3">
-                <span class="font-bold"><%= future_expense.name %></span>
+            <div class="future-expense-edit-all-item">
+              <div>
+                <span class="future-expense-edit-all-item-name">
+                  <%= future_expense.name %>
+                </span>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="font-bold text-error">¥<%= number_with_delimiter(future_expense.amount) %></span>
-                <%= link_to "編集", edit_future_expense_path(future_expense), class: "btn btn-outline btn-xs rounded-xl" %>
-                <%= button_to "削除", future_expense_path(future_expense),
+              <div class="future-expense-edit-all-item-right">
+                <strong>¥<%= number_with_delimiter(future_expense.amount) %></strong>
+                <%= link_to "編集",
+                    edit_future_expense_path(future_expense),
+                    class: "future-expense-edit-all-button future-expense-edit-all-button-edit" %>
+                <%= button_to "削除",
+                    future_expense_path(future_expense),
                     method: :delete,
-                    class: "btn btn-error btn-xs rounded-xl",
+                    class: "future-expense-edit-all-button future-expense-edit-all-button-delete",
                     data: { turbo_confirm: "削除してもよいですか？" } %>
               </div>
             </div>
           <% end %>
         </div>
       <% else %>
-        <div class="text-center text-gray-500 py-8">
-          <p>将来の支出が登録されていません</p>
+        <div class="future-expense-edit-all-empty">
+          <p>支出が登録されていません</p>
+          <%= link_to "支出を登録する", new_future_expense_path %>
         </div>
       <% end %>
-      <div class="mt-6">
-        <%= link_to "戻る", future_expenses_path, class: "btn btn-outline w-full rounded-2xl" %>
+
+      <div class="future-expense-edit-all-actions">
+        <%= link_to "戻る",
+            future_expenses_path,
+            class: "future-expense-edit-all-button future-expense-edit-all-button-back" %>
       </div>
     </div>
-  </div>
-  <div class="grid grid-cols-2 gap-4 mt-6">
-    <a href="<%= incomes_path %>" class="btn btn-outline rounded-2xl">収入</a>
-    <a href="<%= fixed_costs_path %>" class="btn btn-outline rounded-2xl">固定費</a>
-  </div>
+  </section>
 </div>

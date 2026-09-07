@@ -1,8 +1,253 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-    themes: retro --default;
+* {
+  box-sizing: border-box;
 }
 
-[data-theme="retro"] {
-  --color-primary: oklch(70.6% 0.17423 48.027);
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background: #f7f5ef;
+  color: #222;
+  font-family:
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+}
+
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.top-logo {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+
+.menu-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 1px;
+  background: #222;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-button span:nth-child(1) {
+  transform: translate(-50%, -6px);
+}
+
+.menu-button span:nth-child(2) {
+  transform: translate(-50%, 0);
+}
+
+.menu-button span:nth-child(3) {
+  transform: translate(-50%, 6px);
+}
+
+.menu-button.is-open span:nth-child(1) {
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.menu-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-open span:nth-child(3) {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.site-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  padding: 120px 50px;
+  background: #f7f5ef;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 99;
+}
+
+.site-menu a {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+}
+
+.site-menu a:hover {
+  transform: translateX(10px);
+  opacity: 0.6;
+}
+
+.site-menu.is-open {
+  transform: translateX(0);
+}
+
+/* メニュー内のセクションタイトル */
+.menu-section-title {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+  margin-top: 10px;
+  margin-bottom: -15px;
+}
+
+/* メニューの区切り線 */
+.menu-divider {
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  margin: 5px 0;
+}
+
+/* Logout */
+.menu-logout {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-logout:hover {
+  transform: translateX(10px);
+  opacity: 0.6;
+}
+
+/* Money Settings 親メニュー */
+.menu-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  font-family: Georgia, serif;
+  font-size: 24px;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/* 矢印 */
+.menu-arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* 子メニュー */
+.menu-submenu {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+
+  padding-left: 15px;
+  margin-top: -5px;
+}
+
+/* 子メニューのリンク */
+.menu-submenu a {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* 開いた状態 */
+.menu-submenu.is-open {
+  display: flex;
+}
+
+/* 開いたとき矢印を回転 */
+.menu-parent.is-open .menu-arrow {
+  transform: rotate(90deg);
+}
+
+.site-footer {
+  padding: 80px 20px 30px;
+  background: #ebe7dd;
+  width: 100%;
+}
+
+.site-footer-container {
+  width: 100%;
+  margin: 0 ;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.site-footer-brand a {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.site-footer-brand p {
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+.site-footer-nav {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.site-footer-nav a {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer-nav a:hover {
+  opacity: 0.5;
+}
+
+.site-footer-bottom {
+  width: 100%;
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.site-footer-bottom p {
+  margin: 0;
+  font-size: 12px;
 }
