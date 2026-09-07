@@ -1,33 +1,38 @@
-<div class="min-h-screen flex items-center justify-center bg-base-200">
-  <div class="w-full max-w-md px-4">
-    <%# フォーム %>
-    <div class="card bg-base-100 shadow-xl">
-      <div class="card-body">
-        <h2 class="text-xl font-bold text-center mb-4">パスワードをお忘れの方</h2>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "devise_passwords_new", "data-turbo-track": "reload" %>
+<% end %>
 
-        <%= form_with model: resource, as: resource_name, url: password_path(resource_name), method: :post do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="form-control mb-4">
-            <%= f.label :email, "メールアドレス", class: "label font-bold" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                class: "input input-bordered w-full rounded-2xl" %>
-          </div>
-
-          <div class="form-control">
-            <%= f.submit "パスワードリセットメールを送信する", class: "btn btn-primary w-full rounded-2xl" %>
-          </div>
-        <% end %>
-        
-          <div class="text-center mt-6 space-y-2 text-sm">
-            <div>
-              <%= link_to "ログイン", new_session_path(resource_name), class: "link link-hover text-primary font-bold" %>
-            </div>
-            <div>
-              <%= link_to "新規登録", new_registration_path(resource_name), class: "link link-hover text-base-content/70" %>
-            </div>
-        </div>
+<div class="devise-password-container">
+  <div class="devise-password-card">
+    <div class="devise-password-header">
+      <span class="devise-password-card-label">Password Reset</span>
+      <h1>パスワードをお忘れの方</h1>
+    </div>
+    <%= form_with model: resource,
+        as: resource_name,
+        url: password_path(resource_name),
+        method: :post do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="devise-password-form-group">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email,
+            autofocus: true,
+            autocomplete: "email",
+            placeholder: "example@email.com" %>
       </div>
+      <div class="devise-password-actions">
+        <%= f.submit "パスワードリセットメールを送信する",
+            class: "devise-password-button devise-password-button-primary" %>
+      </div>
+    <% end %>
+
+    <div class="devise-password-links">
+      <%= link_to "ログイン",
+          new_session_path(resource_name),
+          class: "devise-password-link-primary" %>
+      <%= link_to "新規登録",
+          new_registration_path(resource_name),
+          class: "devise-password-link-secondary" %>
     </div>
   </div>
 </div>
-  

@@ -1,0 +1,158 @@
+.devise-registration-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 20px 60px;
+  box-sizing: border-box;
+}
+
+.devise-registration-card {
+  width: min(500px, 100%);
+  padding: 28px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.devise-registration-header {
+  margin-bottom: 30px;
+}
+
+.devise-registration-card-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.devise-registration-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.devise-registration-form-group {
+  margin-bottom: 22px;
+}
+
+.devise-registration-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.devise-registration-form-group input[type="text"],
+.devise-registration-form-group input[type="email"],
+.devise-registration-form-group input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.devise-registration-form-group input:focus {
+  border-color: #999;
+}
+
+.devise-registration-password-hint {
+  margin: -2px 0 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.devise-registration-actions {
+  margin-top: 30px;
+}
+
+.devise-registration-button {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.devise-registration-button-primary {
+  border: none;
+  background: #222;
+  color: white;
+}
+
+.devise-registration-button-primary:hover {
+  background: #333;
+}
+
+.devise-registration-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.devise-registration-divider::before,
+.devise-registration-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.devise-registration-button-google {
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+}
+
+.devise-registration-button-google:hover {
+  background: #fafafa;
+}
+
+.devise-registration-google-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.devise-registration-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 13px;
+  color: #777;
+}
+
+.devise-registration-link {
+  color: #222;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.devise-registration-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .devise-registration-container {
+    padding: 50px 20px 40px;
+  }
+
+  .devise-registration-card {
+    padding: 24px;
+  }
+}

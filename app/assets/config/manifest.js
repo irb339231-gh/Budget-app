@@ -15,3 +15,7 @@
 //= link income_new.css
 //= link future_expense_new.css
 //= link fixed_cost_new.css
+//= link devise_sessions_new.css
+//= link devise_registrations_new.css
+//= link devise_passwords_new.css
+//= link devise_passwords_edit.css
