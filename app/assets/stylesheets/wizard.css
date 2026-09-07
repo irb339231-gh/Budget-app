@@ -1,0 +1,260 @@
+.wizard-container {
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.wizard-progress {
+  margin-bottom: 24px;
+}
+
+.wizard-step-label {
+  display: block;
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #666;
+}
+
+.wizard-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.wizard-step {
+  position: relative;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+
+.wizard-step span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 6px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: white;
+  font-size: 11px;
+}
+
+.wizard-step p {
+  margin: 0;
+}
+
+.wizard-step-active {
+  color: #222;
+  font-weight: 500;
+}
+
+.wizard-step-active span {
+  border-color: #222;
+  background: #222;
+  color: white;
+}
+
+.wizard-card {
+  padding: 32px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+}
+
+.wizard-card-header {
+  margin-bottom: 32px;
+}
+
+.wizard-card-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #666;
+}
+
+.wizard-card-header h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.wizard-card-header p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.wizard-form-group {
+  margin-bottom: 24px;
+}
+
+.wizard-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wizard-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  color: #222;
+}
+
+.wizard-input:focus {
+  outline: none;
+  border-color: #222;
+}
+
+.wizard-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.wizard-button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.wizard-button-secondary {
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+}
+
+.wizard-button-secondary:hover {
+  background: #fafafa;
+}
+
+.wizard-button-primary {
+  border: 1px solid #222;
+  background: #222;
+  color: white;
+}
+
+.wizard-button-primary:hover {
+  background: #333;
+}
+
+.wizard-list {
+  margin-bottom: 28px;
+  border-top: 1px solid #eee;
+}
+
+.wizard-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wizard-income-amount {
+  color: #2e9b61;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wizard-delete-button {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: #d9534f;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.wizard-delete-button:hover {
+  background: #fdf4f4;
+  border-color: #d9534f;
+}
+
+.wizard-total {
+  margin: 14px 0 0;
+  color: #2e9b61 !important;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.wizard-add-button {
+  margin-top: 8px;
+}
+
+.wizard-step-completed a {
+  color: #222;
+  text-decoration: none;
+}
+
+.wizard-step-completed span {
+  border-color: #222;
+  background: white;
+  color: #222;
+}
+
+.wizard-step-completed p {
+  color: #222;
+}
+
+.wizard-list-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wizard-expense-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wizard-expense-amount {
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wizard-total-expense {
+  color: #d9534f !important;
+}
+
+@media (max-width: 768px) {
+  .wizard-container {
+    width: min(100% - 40px, 700px);
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .wizard-card {
+    padding: 24px;
+  }
+
+  .wizard-card-header h1 {
+    font-size: 21px;
+  }
+
+  .wizard-step p {
+    font-size: 10px;
+  }
+}
