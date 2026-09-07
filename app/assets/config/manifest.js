@@ -19,3 +19,4 @@
 //= link devise_registrations_new.css
 //= link devise_passwords_new.css
 //= link devise_passwords_edit.css
+//= link transactions_index.css
